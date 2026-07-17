@@ -2,48 +2,22 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-const XAI_API_KEY = "xai-6ULliMBSY5hguQ5rqcQo1gGn6heaMC7XKNpvKp8gWvFWMdoXJRkESw5uJJsaWHkN82IroF0drTLQBY5N";
-
-sendBtn.addEventListener("click", async () => {
+sendBtn.addEventListener("click", () => {
   const message = userInput.value.trim();
   if (message === "") return;
 
   chatBox.innerHTML += `<p><b>You:</b> ${message}</p>`;
   userInput.value = "";
 
-  const typingId = "typing-" + Date.now();
-  chatBox.innerHTML += `<p id="${typingId}"><b>AI:</b> Thinking for content ideas...</p>`;
-  chatBox.scrollTop = chatBox.scrollHeight;
+  // Mock AI reply for now
+  setTimeout(() => {
+    let reply = "Great prompt! Here's a viral one for Boogeyman: Photorealistic image of a tall man in white flowing gown standing on Abuja rooftop at night, holographic HUD on arm, dramatic blue lighting, cinematic, rescuing crying child from armed men, intense action scene, Nigerian city background, ultra realistic, 8k.";
 
-  try {
-    const response = await fetch("https://api.x.ai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${XAI_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "grok-beta",
-        messages: [
-          { 
-            role: "system", 
-            content: "You are ChatTBM, a fun Nigerian AI content creator. Help with photorealistic photo prompts, viral captions, hashtags, Boogeyman stories, market memes. Be creative." 
-          },
-          { role: "user", content: message }
-        ],
-        temperature: 0.85,
-        max_tokens: 900
-      })
-    });
+    if (message.toLowerCase().includes("caption")) {
+      reply = "Caption: 'When the Boogeyman comes to town... even the shadows run! 😂 Who else dey fear this one? #BoogeymanAbuja #Viral'";
+    }
 
-    const data = await response.json();
-    const aiReply = data.choices[0].message.content;
-
-    document.getElementById(typingId).remove();
-    chatBox.innerHTML += `<p><b>AI:</b> ${aiReply}</p>`;
-  } catch (error) {
-    document.getElementById(typingId).innerHTML = "<b>AI:</b> Error connecting. Check internet or key.";
-  }
-
-  chatBox.scrollTop = chatBox.scrollHeight;
+    chatBox.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 800);
 });
