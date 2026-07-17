@@ -8,27 +8,30 @@
 </head>
 <body>
   <div class="chat-container">
-    <!-- Header -->
     <div style="text-align: center; margin-bottom: 20px; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 12px;">
       <h1 style="margin: 0; color: #00ffcc;">🤖 ChatTBM</h1>
-      <p style="margin: 5px 0 0 0; color: #aaa; font-size: 14px;">AI-Powered Content Creation for Businesses</p>
+      <p style="margin: 5px 0 0 0; color: #aaa; font-size: 14px;">AI Content & Problem Solver for Businesses</p>
     </div>
     
     <div id="chat-box">
-      <p><b>AI:</b> Welcome to ChatTBM! How can I help your business with viral content today?</p>
+      <p><b>AI:</b> Welcome! Upload a photo or describe your need for prompts, captions, video ideas, or daily problems.</p>
     </div>
 
-    <!-- Quick Buttons -->
     <div style="margin: 15px 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
       <button onclick="quickPrompt('Viral photo prompt')">Viral Photo Prompt</button>
       <button onclick="quickPrompt('Facebook caption')">Facebook Caption</button>
-      <button onclick="quickPrompt('Viral hook')">Viral Hook</button>
+      <button onclick="quickPrompt('Video reel idea')">Video Reel Idea</button>
       <button onclick="quickPrompt('Content calendar')">Content Calendar</button>
-      <button onclick="quickPrompt('Thumbnail idea')">Thumbnail Idea</button>
     </div>
 
-    <input type="text" id="user-input" placeholder="Describe your content need...">
+    <input type="text" id="user-input" placeholder="Type your request...">
     <button id="send-btn">Send</button>
+
+    <!-- File Upload -->
+    <div style="margin-top: 10px;">
+      <input type="file" id="file-upload" accept="image/*" style="display: none;">
+      <button onclick="document.getElementById('file-upload').click()">📸 Upload Photo for Analysis</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
