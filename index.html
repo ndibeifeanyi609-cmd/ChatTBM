@@ -8,15 +8,17 @@
 </head>
 <body>
   <div class="chat-container">
+    <!-- Header -->
     <div style="text-align: center; margin-bottom: 20px; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 12px;">
       <h1 style="margin: 0; color: #00ffcc;">🤖 ChatTBM</h1>
       <p style="margin: 5px 0 0 0; color: #aaa; font-size: 14px;">AI Content & Problem Solver for Businesses</p>
     </div>
     
     <div id="chat-box">
-      <p><b>AI:</b> Welcome! Upload a photo or describe your need for prompts, captions, video ideas, or daily problems.</p>
+      <p><b>AI:</b> Welcome to ChatTBM! Upload a photo or describe your need for prompts, captions, video ideas, or daily problems.</p>
     </div>
 
+    <!-- Quick Buttons -->
     <div style="margin: 15px 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
       <button onclick="quickPrompt('Viral photo prompt')">Viral Photo Prompt</button>
       <button onclick="quickPrompt('Facebook caption')">Facebook Caption</button>
@@ -28,9 +30,18 @@
     <button id="send-btn">Send</button>
 
     <!-- File Upload -->
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 10px; text-align: center;">
       <input type="file" id="file-upload" accept="image/*" style="display: none;">
       <button onclick="document.getElementById('file-upload').click()">📸 Upload Photo for Analysis</button>
+    </div>
+
+    <!-- Growth Features -->
+    <div style="margin-top: 30px; text-align: center; font-size: 14px; color: #aaa;">
+      <button onclick="navigator.share({title: 'ChatTBM - AI Assistant', text: 'Check out this powerful AI tool for content and business problems!', url: window.location.href})" style="background: #00ffcc; color: black; padding: 10px 20px; border: none; border-radius: 8px; margin-bottom: 15px;">
+        🔗 Share ChatTBM with Clients
+      </button>
+      <p>© ChatTBM • Professional AI Tools for Businesses</p>
+      <p style="font-size: 12px;">Need custom features or premium plan? Contact us.</p>
     </div>
   </div>
 
