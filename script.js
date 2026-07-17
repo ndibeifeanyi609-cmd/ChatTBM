@@ -2,7 +2,7 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-const GROQ_API_KEY = "your-groq-api-key-here"; // ← Change this
+const XAI_API_KEY = "xai-6ULliMBSY5hguQ5rqcQo1gGn6heaMC7XKNpvKp8gWvFWMdoXJRkESw5uJJsaWHkN82IroF0drTLQBY5N";
 
 sendBtn.addEventListener("click", async () => {
   const message = userInput.value.trim();
@@ -16,18 +16,18 @@ sendBtn.addEventListener("click", async () => {
   chatBox.scrollTop = chatBox.scrollHeight;
 
   try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const response = await fetch("https://api.x.ai/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${GROQ_API_KEY}`,
+        "Authorization": `Bearer ${XAI_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama3-8b-8192",
+        model: "grok-beta",
         messages: [
           { 
             role: "system", 
-            content: "You are ChatTBM, a fun, creative Nigerian AI for social media content. Specialize in photorealistic photo prompts (Boogeyman, action, market scenes), viral Facebook captions with emojis and hashtags, viral hooks, content ideas. Use Pidgin when natural. Be creative and viral-focused." 
+            content: "You are ChatTBM, a fun Nigerian AI content creator. Help with photorealistic photo prompts, viral captions, hashtags, Boogeyman stories, market memes. Be creative." 
           },
           { role: "user", content: message }
         ],
@@ -42,7 +42,7 @@ sendBtn.addEventListener("click", async () => {
     document.getElementById(typingId).remove();
     chatBox.innerHTML += `<p><b>AI:</b> ${aiReply}</p>`;
   } catch (error) {
-    document.getElementById(typingId).innerHTML = "<b>AI:</b> Error - check API key or internet.";
+    document.getElementById(typingId).innerHTML = "<b>AI:</b> Error connecting. Check internet or key.";
   }
 
   chatBox.scrollTop = chatBox.scrollHeight;
