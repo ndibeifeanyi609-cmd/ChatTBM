@@ -9,12 +9,24 @@ sendBtn.addEventListener("click", () => {
   chatBox.innerHTML += `<p><b>You:</b> ${message}</p>`;
   userInput.value = "";
 
-  // Mock AI reply for now
-  setTimeout(() => {
-    let reply = "Great prompt! Here's a viral one for Boogeyman: Photorealistic image of a tall man in white flowing gown standing on Abuja rooftop at night, holographic HUD on arm, dramatic blue lighting, cinematic, rescuing crying child from armed men, intense action scene, Nigerian city background, ultra realistic, 8k.";
+  const typingId = "typing-" + Date.now();
+  chatBox.innerHTML += `<p id="${typingId}"><b>AI:</b> Thinking...</p>`;
+  chatBox.scrollTop = chatBox.scrollHeight;
 
-    if (message.toLowerCase().includes("caption")) {
-      reply = "Caption: 'When the Boogeyman comes to town... even the shadows run! 😂 Who else dey fear this one? #BoogeymanAbuja #Viral'";
+  setTimeout(() => {
+    document.getElementById(typingId).remove();
+
+    let reply = "I'm ChatTBM. How can I assist with content, daily problems, or business ideas today?";
+
+    const lower = message.toLowerCase();
+    if (lower.includes("prompt") || lower.includes("photo") || lower.includes("image")) {
+      reply = "Photorealistic prompt: Tall man in white gown on Abuja rooftop at night, holographic HUD, dramatic rescue scene, cinematic lighting, ultra realistic, 8k.";
+    } else if (lower.includes("caption") || lower.includes("post")) {
+      reply = "Viral caption: 'When the unexpected happens in Abuja... 😂 Who can relate? #ChatTBM #ViralNaija'";
+    } else if (lower.includes("video") || lower.includes("reel")) {
+      reply = "Video idea: Short reel of Boogeyman style action in market, text overlay 'Naija Hero Mode Activated', trending sound, call to action.";
+    } else {
+      reply = "For daily problems: Let's break it down. What specifically do you need help with?";
     }
 
     chatBox.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
