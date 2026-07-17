@@ -34,7 +34,8 @@ sendBtn.addEventListener("click", () => {
       reply = `General help: Let's solve your request step by step. Tell me more details.`;
     }
 
-    chatBox.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
+    chatBox.innerHTML += `<p><b>You:</b> Uploaded photo for analysis</p>`;
+    chatBox.innerHTML += `<p><b>AI:</b> Analyzing photo... Describe what you want (prompt, caption, edit idea)? I can help generate advanced prompts based on it.</p>`;
     chatBox.scrollTop = chatBox.scrollHeight;
-  }, 900);
+  }
 });
