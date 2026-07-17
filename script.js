@@ -16,20 +16,27 @@ sendBtn.addEventListener("click", () => {
   setTimeout(() => {
     document.getElementById(typingId).remove();
 
-    let reply = "I'm ChatTBM. How can I assist with content, daily problems, or business ideas today?";
+    let reply = "I'm ChatTBM. How can I help with content, daily problems, photo/video prompts, or business ideas?";
 
     const lower = message.toLowerCase();
-    if (lower.includes("prompt") || lower.includes("photo") || lower.includes("image")) {
-      reply = "Photorealistic prompt: Tall man in white gown on Abuja rooftop at night, holographic HUD, dramatic rescue scene, cinematic lighting, ultra realistic, 8k.";
-    } else if (lower.includes("caption") || lower.includes("post")) {
-      reply = "Viral caption: 'When the unexpected happens in Abuja... 😂 Who can relate? #ChatTBM #ViralNaija'";
-    } else if (lower.includes("video") || lower.includes("reel")) {
-      reply = "Video idea: Short reel of Boogeyman style action in market, text overlay 'Naija Hero Mode Activated', trending sound, call to action.";
-    } else {
-      reply = "For daily problems: Let's break it down. What specifically do you need help with?";
+
+    if (lower.includes("photo") || lower.includes("image") || lower.includes("prompt")) {
+      reply = `Photorealistic prompt for Grok Imagine or Midjourney:<br>
+      "Photorealistic image of a confident Black man in white flowing gown standing on Abuja rooftop at night, holographic HUD on arm, dramatic blue lighting, cinematic, rescuing crying child from armed men, intense action scene, Nigerian city background, ultra realistic, 8k."`;
+    } 
+    else if (lower.includes("video") || lower.includes("reel") || lower.includes("short")) {
+      reply = `Video/Reel idea:<br>
+      "30-second cinematic reel: Boogeyman in white gown walking through Abuja market at night, dramatic lighting, text overlay 'The Shadow That Protects', trending Afrobeats sound, end with CTA: 'Need protection? DM me'. Perfect for viral reach."`;
+    } 
+    else if (lower.includes("caption") || lower.includes("post")) {
+      reply = `Viral Facebook caption:<br>
+      "When the unexpected happens in Abuja... the Boogeyman shows up 😂💪 Who else dey fear this one? #BoogeymanAbuja #ViralNaija #ChatTBM"`;
+    } 
+    else {
+      reply = `For daily/business problems: Let's solve it step by step. What exactly do you need help with?`;
     }
 
     chatBox.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
     chatBox.scrollTop = chatBox.scrollHeight;
-  }, 800);
+  }, 900);
 });
