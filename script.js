@@ -10,7 +10,7 @@ sendBtn.addEventListener("click", () => {
   userInput.value = "";
 
   const typingId = "typing-" + Date.now();
-  chatBox.innerHTML += `<p id="${typingId}"><b>AI:</b> Thinking...</p>`;
+  chatBox.innerHTML += `<p id="${typingId}"><b>AI:</b> Generating advanced prompt...</p>`;
   chatBox.scrollTop = chatBox.scrollHeight;
 
   setTimeout(() => {
@@ -21,19 +21,17 @@ sendBtn.addEventListener("click", () => {
     const lower = message.toLowerCase();
 
     if (lower.includes("photo") || lower.includes("image") || lower.includes("prompt")) {
-      reply = `Photorealistic prompt for Grok Imagine or Midjourney:<br>
-      "Photorealistic image of a confident Black man in white flowing gown standing on Abuja rooftop at night, holographic HUD on arm, dramatic blue lighting, cinematic, rescuing crying child from armed men, intense action scene, Nigerian city background, ultra realistic, 8k."`;
+      reply = `Advanced photorealistic prompt (copy and use in Grok Imagine or Midjourney):<br><br>
+      "Photorealistic, ultra-detailed, cinematic image of a tall, confident Black man in flowing white gown standing on Abuja rooftop at night, dramatic blue lighting, holographic HUD on arm, intense rescue scene with crying child, realistic textures, sharp details, volumetric fog, 8k, masterpiece, best quality"`;
     } 
-    else if (lower.includes("video") || lower.includes("reel") || lower.includes("short")) {
-      reply = `Video/Reel idea:<br>
-      "30-second cinematic reel: Boogeyman in white gown walking through Abuja market at night, dramatic lighting, text overlay 'The Shadow That Protects', trending Afrobeats sound, end with CTA: 'Need protection? DM me'. Perfect for viral reach."`;
+    else if (lower.includes("video") || lower.includes("reel")) {
+      reply = `Video idea for reel: Short cinematic video of Boogeyman action in Abuja market, dramatic slow motion, text overlay, trending sound, high engagement potential.`;
     } 
-    else if (lower.includes("caption") || lower.includes("post")) {
-      reply = `Viral Facebook caption:<br>
-      "When the unexpected happens in Abuja... the Boogeyman shows up 😂💪 Who else dey fear this one? #BoogeymanAbuja #ViralNaija #ChatTBM"`;
+    else if (lower.includes("caption")) {
+      reply = `Viral caption: "The protector arrives when you least expect it... 💪😂 Who needs this energy in their life? #ChatTBM #BoogeymanNaija"`;
     } 
     else {
-      reply = `For daily/business problems: Let's solve it step by step. What exactly do you need help with?`;
+      reply = `General help: Let's solve your request step by step. Tell me more details.`;
     }
 
     chatBox.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
