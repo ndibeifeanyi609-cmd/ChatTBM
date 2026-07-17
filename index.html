@@ -11,16 +11,16 @@
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 20px; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 12px;">
       <h1 style="margin: 0; color: #00ffcc;">🤖 ChatTBM</h1>
-      <p style="margin: 5px 0 0 0; color: #aaa; font-size: 14px;">AI Content • Video Ideas • Problem Solver for Businesses</p>
+      <p style="margin: 5px 0 0 0; color: #aaa; font-size: 14px;">AI Content • Video • Problem Solver for Businesses</p>
     </div>
 
     <!-- Testimonial -->
     <div style="margin: 15px 0; padding: 12px; background: rgba(0,255,204,0.1); border-radius: 12px; font-size: 13px; text-align: center;">
-      "ChatTBM turned my ideas into viral posts instantly!" — Satisfied Client
+      "ChatTBM helped me create viral content in minutes!" — Happy Client
     </div>
     
     <div id="chat-box">
-      <p><b>AI:</b> Welcome to ChatTBM! Upload a photo or tell me your content, video, or business need.</p>
+      <p><b>AI:</b> Welcome! Upload a photo or tell me your need for prompts, captions, video ideas, or business solutions.</p>
     </div>
 
     <!-- Quick Buttons -->
@@ -40,10 +40,15 @@
       <button onclick="document.getElementById('file-upload').click()">📸 Upload Photo for Analysis</button>
     </div>
 
+    <!-- Extra Buttons -->
+    <div style="margin-top: 10px; text-align: center;">
+      <button onclick="chatBox.innerHTML = '<p><b>AI:</b> Chat cleared. How can I help?</p>'">Clear Chat</button>
+    </div>
+
     <!-- Growth -->
     <div style="margin-top: 30px; text-align: center;">
       <button onclick="navigator.share({title: 'ChatTBM', text: 'Professional AI tool for content & business!', url: window.location.href})" style="background: #00ffcc; color: black; padding: 12px 24px; border: none; border-radius: 8px;">
-        🔗 Share with Your Team/Clients
+        🔗 Share ChatTBM
       </button>
       <p style="margin-top: 15px; font-size: 13px; color: #aaa;">© ChatTBM • Built for Business Growth</p>
     </div>
