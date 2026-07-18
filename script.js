@@ -2,7 +2,7 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-const XAI_API_KEY = "xai-...VEbu"; // Your key
+const XAI_API_KEY = "xai-6ULliMBSY5hguQ5rqcQo1gGn6heaMC7XKNpvKp8gWvFWMdoXJRkESw5uJJsaWHkN82IroF0drTLQBY5N";
 
 sendBtn.addEventListener("click", async () => {
   const message = userInput.value.trim();
