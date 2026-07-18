@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTY<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,15 +52,12 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
+            margin: 10px;
         }
         .features {
             padding: 80px 5%;
             background: rgba(0,0,0,0.3);
             text-align: center;
-        }
-        .features h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
         }
         .grid {
             display: grid;
@@ -83,17 +80,18 @@
     <header>
         <div class="logo">ChatTBM</div>
         <nav>
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
             <a href="#">Features</a>
-            <a href="#">Pricing</a>
             <a href="#">About</a>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Welcome to <span style="color:#00ff88;">ChatTBM</span></h1>
-        <p>The smartest AI chat for Nigerians — fast answers, creative ideas, content creation, and daily assistance.</p>
-        <button class="btn" onclick="alert('Chat feature coming soon!')">Start Chatting Now →</button>
+        <p>The smartest AI chat for Nigerians — fast answers, creative ideas, content creation, memes, captions & more.</p>
+        <button class="btn" onclick="window.location.href='login.html'">Login to Start Chatting</button>
+        <button class="btn" style="background:transparent; border:2px solid #00ff88; color:#00ff88;" onclick="alert('Chat feature coming soon!')">Try Demo</button>
     </section>
 
     <section class="features">
@@ -115,8 +113,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 ChatTBM. All Rights Reserved.</p>
-        <p>Made for hustlers by a hustler 🔥</p>
+        <p>&copy; 2026 ChatTBM. All Rights Reserved. | Made for hustlers by a hustler 🔥</p>
     </footer>
 </body>
 </html>
