@@ -1,59 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatTBM - AI Content & Business Assistant</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTBM - Smart AI Chat</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            line-height: 1.6;
+        }
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        nav a {
+            color: white;
+            margin-left: 25px;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 120px 20px 80px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0 0 20px;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        .btn {
+            background: #00ff88;
+            color: black;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .features {
+            padding: 80px 5%;
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.4);
+        }
+    </style>
 </head>
 <body>
-  <div class="chat-container">
-    <!-- Header -->
-    <div style="text-align: center; margin-bottom: 20px; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 12px;">
-      <h1 style="margin: 0; color: #00ffcc;">🤖 ChatTBM</h1>
-      <p style="margin: 5px 0 0 0; color: #aaa; font-size: 14px;">AI Content • Video • Problem Solver for Businesses</p>
-    </div>
+    <header>
+        <div class="logo">ChatTBM</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
 
-    <!-- Testimonial -->
-    <div style="margin: 15px 0; padding: 12px; background: rgba(0,255,204,0.1); border-radius: 12px; font-size: 13px; text-align: center;">
-      "ChatTBM helped me create viral content in minutes!" — Happy Client
-    </div>
-    
-    <div id="chat-box">
-      <p><b>AI:</b> Welcome! Upload a photo or tell me your need for prompts, captions, video ideas, or business solutions.</p>
-    </div>
+    <section class="hero">
+        <h1>Welcome to <span style="color:#00ff88;">ChatTBM</span></h1>
+        <p>The smartest AI chat for Nigerians — fast answers, creative ideas, content creation, and daily assistance.</p>
+        <button class="btn" onclick="alert('Chat feature coming soon!')">Start Chatting Now →</button>
+    </section>
 
-    <!-- Quick Buttons -->
-    <div style="margin: 15px 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-      <button onclick="quickPrompt('Viral photo prompt')">Viral Photo Prompt</button>
-      <button onclick="quickPrompt('Facebook caption')">Facebook Caption</button>
-      <button onclick="quickPrompt('Video reel idea')">Video Reel Idea</button>
-      <button onclick="quickPrompt('Content calendar')">Content Calendar</button>
-    </div>
+    <section class="features">
+        <h2>Why Choose ChatTBM?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>⚡ Super Fast</h3>
+                <p>Get instant replies with Naija intelligence.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Creative Power</h3>
+                <p>Generate captions, memes, thumbnails & stories.</p>
+            </div>
+            <div class="card">
+                <h3>🇳🇬 Naija Focused</h3>
+                <p>Understands Pidgin, local culture & real-life situations.</p>
+            </div>
+        </div>
+    </section>
 
-    <input type="text" id="user-input" placeholder="Type your request...">
-    <button id="send-btn">Send</button>
-
-    <!-- Upload -->
-    <div style="margin-top: 10px; text-align: center;">
-      <input type="file" id="file-upload" accept="image/*" style="display: none;">
-      <button onclick="document.getElementById('file-upload').click()">📸 Upload Photo for Analysis</button>
-    </div>
-
-    <!-- Extra Buttons -->
-    <div style="margin-top: 10px; text-align: center;">
-      <button onclick="chatBox.innerHTML = '<p><b>AI:</b> Chat cleared. How can I help?</p>'">Clear Chat</button>
-    </div>
-
-    <!-- Growth -->
-    <div style="margin-top: 30px; text-align: center;">
-      <button onclick="navigator.share({title: 'ChatTBM', text: 'Professional AI tool for content & business!', url: window.location.href})" style="background: #00ffcc; color: black; padding: 12px 24px; border: none; border-radius: 8px;">
-        🔗 Share ChatTBM
-      </button>
-      <p style="margin-top: 15px; font-size: 13px; color: #aaa;">© ChatTBM • Built for Business Growth</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 ChatTBM. All Rights Reserved.</p>
+        <p>Made for hustlers by a hustler 🔥</p>
+    </footer>
 </body>
 </html>
