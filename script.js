@@ -2,7 +2,9 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-sendBtn.addEventListener("click", () => {
+const XAI_API_KEY = "xai-...VEbu"; // Your key
+
+sendBtn.addEventListener("click", async () => {
   const message = userInput.value.trim();
   if (message === "") return;
 
@@ -10,32 +12,38 @@ sendBtn.addEventListener("click", () => {
   userInput.value = "";
 
   const typingId = "typing-" + Date.now();
-  chatBox.innerHTML += `<p id="${typingId}"><b>AI:</b> Generating advanced prompt...</p>`;
+  chatBox.innerHTML += `<p id="${typingId}"><b>AI:</b> Thinking...</p>`;
   chatBox.scrollTop = chatBox.scrollHeight;
 
-  setTimeout(() => {
+  try {
+    const response = await fetch("https://api.x.ai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${XAI_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "grok-beta",
+        messages: [
+          { 
+            role: "system", 
+            content: "You are ChatTBM, a helpful AI assistant for content creation, photo prompts, video ideas, captions, and solving daily/business problems. Be creative, practical, and professional." 
+          },
+          { role: "user", content: message }
+        ],
+        temperature: 0.8,
+        max_tokens: 800
+      })
+    });
+
+    const data = await response.json();
+    const aiReply = data.choices[0].message.content;
+
     document.getElementById(typingId).remove();
-
-    let reply = "I'm ChatTBM. How can I help with content, daily problems, photo/video prompts, or business ideas?";
-
-    const lower = message.toLowerCase();
-
-    if (lower.includes("photo") || lower.includes("image") || lower.includes("prompt")) {
-      reply = `Advanced photorealistic prompt (copy and use in Grok Imagine or Midjourney):<br><br>
-      "Photorealistic, ultra-detailed, cinematic image of a tall, confident Black man in flowing white gown standing on Abuja rooftop at night, dramatic blue lighting, holographic HUD on arm, intense rescue scene with crying child, realistic textures, sharp details, volumetric fog, 8k, masterpiece, best quality"`;
-    } 
-    else if (lower.includes("video") || lower.includes("reel")) {
-      reply = `Video idea for reel: Short cinematic video of Boogeyman action in Abuja market, dramatic slow motion, text overlay, trending sound, high engagement potential.`;
-    } 
-    else if (lower.includes("caption")) {
-      reply = `Viral caption: "The protector arrives when you least expect it... 💪😂 Who needs this energy in their life? #ChatTBM #BoogeymanNaija"`;
-    } 
-    else {
-      reply = `General help: Let's solve your request step by step. Tell me more details.`;
-    }
-
-    chatBox.innerHTML += `<p><b>You:</b> Uploaded photo for analysis</p>`;
-    chatBox.innerHTML += `<p><b>AI:</b> Analyzing photo... Describe what you want (prompt, caption, edit idea)? I can help generate advanced prompts based on it.</p>`;
-    chatBox.scrollTop = chatBox.scrollHeight;
+    chatBox.innerHTML += `<p><b>AI:</b> ${aiReply}</p>`;
+  } catch (error) {
+    document.getElementById(typingId).innerHTML = "<b>AI:</b> Error connecting. Check key or try again.";
   }
+
+  chatBox.scrollTop = chatBox.scrollHeight;
 });
