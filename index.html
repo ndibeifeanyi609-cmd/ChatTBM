@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTBM - Your AI Companion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #00ff9d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #050505;
+            color: #e0e0e0;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5,5,5,0.98);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+        nav a {
+            color: #bbb;
+            margin-left: 32px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            padding-top: 80px;
+        }
+        .left {
+            flex: 1;
+            padding: 80px 8% 0;
+        }
+        .right {
+            flex: 1;
+            background: #0f0f0f;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin: 0 0 24px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00ff9d, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tagline {
+            font-size: 1.4rem;
+            color: #aaa;
+            max-width: 480px;
+        }
+        .chat-window {
+            background: #111;
+            border-radius: 20px;
+            height: 520px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #222;
+            overflow: hidden;
+        }
+        .chat-header {
+            padding: 16px;
+            background: #1a1a1a;
+            border-bottom: 1px solid #222;
+            font-weight: 600;
+        }
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .msg {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 18px;
+        }
+        .msg-bot {
+            background: #1f1f1f;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .msg-user {
+            background: var(--primary);
+            color: black;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .input-area {
+            padding: 16px;
+            background: #1a1a1a;
+            border-top: 1px solid #222;
+        }
+        .input-box {
+            display: flex;
+            background: #222;
+            border-radius: 999px;
+            padding: 8px;
+        }
+        input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.05rem;
+        }
+        button {
+            background: var(--primary);
+            color: black;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .features {
+            padding: 100px 8%;
+            background: #0a0a0a;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #111;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #1f1f1f;
+        }
+
+        .brand-logo {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ChatTBM Logo -->
+    <div class="brand-logo">
+        <img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" 
+             alt="ChatTBM Logo" 
+             width="320" 
+             style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 183, 255, 0.3);">
+    </div>
+
+    <header>
+        <div class="logo">ChatTBM</div>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="#">Features</a>
+            <a href="#">For Creators</a>
+            <a href="#">API</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="left">
+            <h1>Meet <span class="gradient-text">ChatTBM</span></h1>
+            <p class="tagline">Your personal AI that speaks Naija, creates content, solves problems, and keeps it real.</p>
+            
+            <div style="margin-top:50px;">
+                <a href="login.html" style="background:#00ff9d; color:black; padding:16px 40px; border-radius:999px; text-decoration:none; font-weight:600; font-size:1.1rem;">Start Chatting Free</a>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="chat-window">
+                <div class="chat-header">ChatTBM • Online</div>
+                <div class="messages" id="messages">
+                    <div class="msg msg-bot">Hello Ifeanyi! How can I help you create something viral today? 🔥</div>
+                </div>
+                <div class="input-area">
+                    <div class="input-box">
+                        <input type="text" id="userInput" placeholder="Type your message...">
+                        <button onclick="sendMessage()">↑</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="features">
+        <h2 style="text-align:center; font-size:2.6rem; margin-bottom:60px;">Powerful Features</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Content Creation</h3>
+                <p>Captions, thumbnails, scripts, and full posts in seconds.</p>
+            </div>
+            <div class="card">
+                <h3>Naija Intelligence</h3>
+                <p>Understands Pidgin, local trends, markets, and culture.</p>
+            </div>
+            <div class="card">
+                <h3>Creative Studio</h3>
+                <p>Image prompts, meme ideas, storytelling for your pages.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const messages = document.getElementById('messages');
+            
+            if (input.value.trim() === '') return;
+            
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = input.value;
+            messages.appendChild(userMsg);
+            
+            messages.scrollTop = messages.scrollHeight;
+            
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'msg msg-bot';
+                botMsg.textContent = "Great idea! Here's a quick viral caption for that: 'Naija hustle no get duplicate 🔥 What's next boss?' Want me to generate more?";
+                messages.appendChild(botMsg);
+                messages.scrollTop = messages.scrollHeight;
+            }, 800);
+            
+            input.value = '';
+        }
+        
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>
