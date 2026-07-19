@@ -152,3 +152,10 @@ background:white;
 font-size:20px;
 
 }
+.logo{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:10px;
+}
