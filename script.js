@@ -104,3 +104,15 @@ function quickMessage(text){
     sendMessage();
 
 }
+function openSignup(){
+
+alert("Welcome to ChatTBM Sign Up page 🚀");
+
+}
+
+
+function openLogin(){
+
+alert("Welcome back to ChatTBM Login page 👋");
+
+}
