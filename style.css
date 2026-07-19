@@ -87,7 +87,13 @@ body{
     padding:50px 20px;
 }
 
-.hero-logo{
+.hero-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+}
     width:100px;
     margin-bottom:20px;
 }
