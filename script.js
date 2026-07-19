@@ -1,149 +1,238 @@
+/* ==========================
+   ChatTBM AI
+   script.js - PART 1
+========================== */
+
+const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
+const typingIndicator = document.getElementById("typing-indicator");
+
+/* ==========================
+   SEND MESSAGE
+========================== */
+
 function sendMessage() {
 
-    let chatBox = document.getElementById("chat-box");
-    let input = document.getElementById("user-input");
+    const message = userInput.value.trim();
 
-    let message = input.value.trim();
+    if (message === "") return;
 
-    if (message === "") {
-        return;
-    }
+    addMessage(message, "user");
 
+    userInput.value = "";
 
-    // Show user message
-    chatBox.innerHTML += `
-    <div class="message user">
-        ${message}
-    </div>
-    `;
+    showTyping();
 
-
-    // Temporary ChatTBM AI response
-    let reply = getReply(message);
-
-
-    // Show bot response
     setTimeout(() => {
 
-        chatBox.innerHTML += `
-        <div class="message bot">
-            ${reply}
-        </div>
-        `;
+        hideTyping();
 
-        chatBox.scrollTop = chatBox.scrollHeight;
+        const reply = generateReply(message);
 
-    }, 700);
+        addMessage(reply, "bot");
 
-
-
-    input.value = "";
+    }, 1000);
 
 }
 
+/* ==========================
+   ADD MESSAGE
+========================== */
 
+function addMessage(text, sender) {
 
+    const message = document.createElement("div");
 
-function getReply(message){
+    message.className = "message " + sender;
 
-    message = message.toLowerCase();
+    message.innerHTML = text;
 
+    chatBox.appendChild(message);
 
-
-    if(message.includes("caption")){
-
-        return "✨ Caption idea: 'Your next viral moment starts with one creative idea. Keep creating and keep growing 🚀'";
-
-    }
-
-
-    else if(message.includes("script")){
-
-        return "🎬 Video Script:<br><br>Hook: Stop scrolling!<br>Problem: Tell the story.<br>Solution: Give value.<br>Ending: Ask viewers to follow for more.";
-
-    }
-
-
-    else if(message.includes("hashtag")){
-
-        return "#️⃣ Hashtags: #ContentCreator #ViralVideo #AIContent #ChatTBM #CreativeIdeas";
-
-    }
-
-
-    else if(message.includes("facebook")){
-
-        return "📘 Facebook tip: Start with a strong hook, tell a short story, and encourage people to comment.";
-
-    }
-
-
-    else if(message.includes("viral")){
-
-        return "🔥 Viral idea: Create a short video with a surprising first 3 seconds, emotional story, and strong ending.";
-
-    }
-
-
-    else {
-
-        return "🤖 I am ChatTBM. I can help you create captions, scripts, hashtags, adverts and viral content ideas.";
-
-    }
+    chatBox.scrollTop = chatBox.scrollHeight;
 
 }
 
-
-
-
+/* ==========================
+   QUICK BUTTONS
+========================== */
 
 function quickMessage(text){
 
-    document.getElementById("user-input").value = text;
+    userInput.value = text;
 
     sendMessage();
 
 }
-functionfunction openSignup(){
 
-document.getElementById("signup-page").classList.remove("hidden");
-document.querySelector(".welcome").style.display="none";
+/* ==========================
+   TYPING
+========================== */
+
+function showTyping(){
+
+    if(typingIndicator){
+
+        typingIndicator.classList.remove("hidden");
+
+    }
 
 }
 
+function hideTyping(){
+
+    if(typingIndicator){
+
+        typingIndicator.classList.add("hidden");
+
+    }
+
+}
+
+/* ==========================
+   ChatTBM AI
+   script.js - PART 2
+========================== */
+
+function generateReply(message){
+
+    const text = message.toLowerCase();
+
+    if(text.includes("caption")){
+
+        return "✨ Caption Idea:<br><br>Your next viral post starts with one creative idea. Keep creating and stay consistent! 🚀";
+
+    }
+
+    if(text.includes("script")){
+
+        return "🎬 Video Script:<br><br><strong>Hook → Problem → Solution → Call to Action.</strong><br><br>Start with something that grabs attention immediately.";
+
+    }
+
+    if(text.includes("hashtag")){
+
+        return "#AI #ChatTBM #ContentCreator #ViralContent #Instagram #Facebook #Reels";
+
+    }
+
+    if(text.includes("facebook")){
+
+        return "📘 Facebook Post:<br><br>People don't buy products—they buy solutions. Here's how ChatTBM can help you create better content in minutes.";
+
+    }
+
+    if(text.includes("instagram")){
+
+        return "📷 Instagram Caption:<br><br>Create. Inspire. Grow. 🚀 Your next viral post starts today with ChatTBM.";
+
+    }
+
+    if(text.includes("viral")){
+
+        return "🔥 Viral Idea:<br><br>Film a 'Before vs After' transformation and hook viewers in the first 3 seconds.";
+
+    }
+
+    return "🤖 I'm still learning. Soon I'll answer using your AI API. For now, ask me about captions, scripts, hashtags, Facebook posts, Instagram captions, or viral ideas.";
+
+}
+
+/* ==========================
+   ENTER TO SEND
+========================== */
+
+userInput.addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        sendMessage();
+
+    }
+
+});
+
+/* ==========================
+   NEW CHAT
+========================== */
+
+function newChat(){
+
+    chatBox.innerHTML = `
+
+<div class="message bot">
+
+👋 Hello, I'm <strong>ChatTBM</strong>.
+
+<br><br>
+
+How can I help you today?
+
+</div>
+
+`;
+
+}
+
+/* ==========================
+   ChatTBM AI
+   script.js - PART 3
+========================== */
+
+/* Open Signup */
+
+function openSignup(){
+
+    document.getElementById("signup-page").classList.remove("hidden");
+    document.getElementById("login-page").classList.add("hidden");
+
+}
+
+/* Open Login */
 
 function openLogin(){
 
-document.getElementById("login-page").classList.remove("hidden");
-document.querySelector(".welcome").style.display="none";
+    document.getElementById("login-page").classList.remove("hidden");
+    document.getElementById("signup-page").classList.add("hidden");
 
 }
 
+/* Switch Pages */
+
+function showSignup(){
+
+    openSignup();
+
+}
 
 function showLogin(){
 
-document.getElementById("signup-page").classList.add("hidden");
-document.getElementById("login-page").classList.remove("hidden");
+    openLogin();
 
 }
 
-
-functionfunction openSignup(){
-
-document.getElementById("signup-page").classList.remove("hidden");
-document.querySelector(".welcome").style.display="none";
-
-}
+/* Create Account */
 
 function createAccount(){
 
-alert("ChatTBM account created successfully 🚀");
+    alert("🎉 Account creation is coming soon!");
 
 }
 
+/* Login */
 
 function loginUser(){
 
-alert("Welcome back to ChatTBM 👋");
+    alert("✅ Login feature is coming soon!");
 
 }
+
+/* Start App */
+
+window.onload = function(){
+
+    if(chatBox){
+
+        chatBox.scrollTop = chatBox.scrollHeight;
