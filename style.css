@@ -219,3 +219,71 @@ h2 {
     }
 
 }
+
+/* ChatTBM Dark Theme */
+
+body {
+    background: #0f0f0f;
+}
+
+
+.chat-container {
+    background: #1a1a1a;
+    color: white;
+}
+
+
+h2 {
+    color: white;
+}
+
+
+.subtitle {
+    color: #bbb;
+}
+
+
+#chat-box {
+    background: #111;
+    border-color: #333;
+}
+
+
+.bot {
+    background: #2b2b2b;
+    color: white;
+}
+
+
+.user {
+    background: #2563eb;
+    color: white;
+}
+
+
+.quick-buttons button {
+    background: #2563eb;
+    color: white;
+}
+
+
+.input-area input {
+    background: #222;
+    color: white;
+    border-color: #444;
+}
+
+
+.input-area input::placeholder {
+    color: #999;
+}
+
+
+.input-area button {
+    background: #2563eb;
+}
+
+
+.footer {
+    color: #aaa;
+}
