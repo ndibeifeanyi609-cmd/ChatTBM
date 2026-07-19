@@ -3,354 +3,118 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ChatTBM - AI Content Assistant</title>
+    <title>ChatTBM - AI Content Assistant</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<div class="app">
 
-<!-- ================= HEADER ================= -->
+<div class="chat-container">
 
-<header class="topbar">
 
-<div class="left">
+    <img 
+        src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" 
+        class="hero-logo" 
+        alt="ChatTBM Logo"
+    >
 
-<img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" alt="ChatTBM">
 
-<div>
+    <h2>🤖 ChatTBM</h2>
 
-<h1>ChatTBM</h1>
 
-<p>Your AI Content Assistant</p>
-
-</div>
-
-</div>
-
-<div class="right">
-
-<button class="icon-btn" onclick="newChat()">
-
-＋ New Chat
-
-</button>
-
-<button class="icon-btn">
-
-⚙️
-
-</button>
-
-</div>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" class="hero-logo" alt="ChatTBM">
-
-<h2>Create Better Content with AI</h2>
-
-<p>
-
-Generate captions, scripts, hashtags,
-
-Facebook posts, Instagram captions,
-
-ad copies and viral ideas in seconds.
-
-</p>
-
-<div class="hero-buttons">
-
-<button class="signup"
-
-onclick="openSignup()">
-
-Create Account
-
-</button>
-
-<button class="login"
-
-onclick="openLogin()">
-
-Log In
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= FEATURES ================= -->
-
-<section class="features">
-
-<div class="card">
-
-✨
-
-<h3>Captions</h3>
-
-<p>Create engaging captions instantly.</p>
-
-</div>
-
-<div class="card">
-
-🎬
-
-<h3>Scripts</h3>
-
-<p>Generate video scripts in seconds.</p>
-
-</div>
-
-<div class="card">
-
-🔥
-
-<h3>Viral Ideas</h3>
-
-<p>Never run out of content ideas.</p>
-
-</div>
-
-<div class="card">
-
-📈
-
-<h3>Grow Faster</h3>
-
-<p>Build your audience with AI.</p>
-
-</div>
-
-</section>
-
-<!-- ================= SIGNUP PAGE ================= -->
-
-<div class="auth-page hidden" id="signup-page">
-
-  <img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" class="hero-logo" alt="ChatTBM">
-
-    <h2>Create your ChatTBM account</h2>
-
-    <p>Start creating amazing content with AI.</p>
-
-    <input
-        type="text"
-        id="signup-name"
-        placeholder="Full Name"
-        autocomplete="name">
-
-    <input
-        type="email"
-        id="signup-email"
-        placeholder="Email Address"
-        autocomplete="email">
-
-    <input
-        type="password"
-        id="signup-password"
-        placeholder="Password"
-        autocomplete="new-password">
-
-    <button class="primary-btn" onclick="createAccount()">
-        Create Account
-    </button>
-
-    <p class="switch-link" onclick="showLogin()">
-        Already have an account? <strong>Log In</strong>
+    <p class="subtitle">
+        Your AI Content Assistant for Captions, Scripts & Viral Ideas.
     </p>
 
-</div>
+    
+    <div id="chat-box">
 
-<!-- ================= LOGIN PAGE ================= -->
+        <p class="bot">
+            👋 Welcome to ChatTBM! 
+            I can help you create captions, video scripts, Facebook posts, hashtags, adverts and viral content ideas.
+        </p>
 
-<div class="auth-page hidden" id="login-page">
+    </div>
 
-    <img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" class="hero-logo" alt="ChatTBM">
 
-    <h2>Welcome Back</h2>
 
-    <p>Log in to continue using ChatTBM.</p>
+    <div class="quick-buttons">
 
-    <input
-        type="email"
-        id="login-email"
-        placeholder="Email Address"
-        autocomplete="email">
+        <button onclick="quickMessage('Create a caption')">
+            ✍️ Create a Caption
+        </button>
 
-    <input
-        type="password"
-        id="login-password"
-        placeholder="Password"
-        autocomplete="current-password">
 
-    <button class="primary-btn" onclick="loginUser()">
-        Log In
-    </button>
+        <button onclick="quickMessage('Write a video script')">
+            🎬 Video Script
+        </button>
 
-    <p class="switch-link" onclick="showSignup()">
-        Don't have an account? <strong>Create One</strong>
-    </p>
 
-</div>
+        <button onclick="quickMessage('Generate hashtags')">
+            #️⃣ Hashtags
+        </button>
 
-<!-- ================= CHAT AREA ================= -->
 
-<section class="chat-section">
+        <button onclick="quickMessage('Write a Facebook post')">
+            📘 Facebook Post
+        </button>
 
-<div id="chat-box">
 
-<div class="message bot">
+        <button onclick="quickMessage('Write an Instagram caption')">
+            📸 Instagram Caption
+        </button>
 
-👋 <strong>Hello, I'm ChatTBM.</strong>
 
-<br><br>
+        <button onclick="quickMessage('Give me viral content ideas')">
+            🚀 Viral Ideas
+        </button>
 
-I can help you create:
+    </div>
 
-<br>✅ Viral Captions
+    <div class="input-area">
 
-<br>✅ Video Scripts
+        <input 
+            type="text" 
+            id="user-input" 
+            placeholder="Ask ChatTBM anything..."
+        >
 
-<br>✅ Facebook Posts
 
-<br>✅ Instagram Captions
+        <button onclick="sendMessage()">
+            Send
+        </button>
 
-<br>✅ Hashtags
+    </div>
 
-<br>✅ Advert Copies
 
-<br>✅ Content Calendars
 
-<br><br>
+    <div class="footer">
 
-How can I help you today?
+        <p>
+            🚀 ChatTBM helps you create captions, scripts, hashtags, adverts and viral content ideas.
+        </p>
 
-</div>
+        <p>
+            Powered by AI • Built for Creators
+        </p>
 
-</div>
+    </div>
 
-<!-- Typing Indicator -->
-
-<div id="typing-indicator" class="hidden">
-
-<div class="typing">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-    <!-- ================= QUICK ACTIONS ================= -->
-
-<div class="quick-buttons">
-
-<button onclick="quickMessage('Create a viral caption')">
-
-✨ Caption
-
-</button>
-
-<button onclick="quickMessage('Write a video script')">
-
-🎬 Script
-
-</button>
-
-<button onclick="quickMessage('Generate hashtags')">
-
-#️⃣ Hashtags
-
-</button>
-
-<button onclick="quickMessage('Give me viral content ideas')">
-
-🔥 Viral Ideas
-
-</button>
-
-<button onclick="quickMessage('Write a Facebook post')">
-
-📘 Facebook
-
-</button>
-
-<button onclick="quickMessage('Write an Instagram caption')">
-
-📷 Instagram
-
-</button>
 
 </div>
 
-<!-- ================= INPUT AREA ================= -->
 
-<div class="input-area">
-
-<button class="tool-btn" title="Attach file">
-
-📎
-
-</button>
-
-<input
-id="user-input"
-type="text"
-placeholder="Ask ChatTBM anything..."
-autocomplete="off"
-spellcheck="false">
-
-<button class="tool-btn" title="Voice (Coming Soon)">
-
-🎤
-
-</button>
-
-<button id="send-btn" onclick="sendMessage()">
-
-➤
-
-</button>
-
-</div>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<p>Powered by <strong>ChatTBM AI</strong></p>
-
-</footer>
-
-</section>
-
-</div>
 
 <script src="script.js"></script>
+
 
 </body>
 
