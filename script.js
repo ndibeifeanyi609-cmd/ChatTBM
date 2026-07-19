@@ -113,6 +113,49 @@ alert("Welcome to ChatTBM Sign Up page 🚀");
 
 function openLogin(){
 
-alert("Welcome back to ChatTBM Login page 👋");
+function openSignup(){
+
+document.getElementById("signup-page").classList.remove("hidden");
+document.querySelector(".welcome").style.display="none";
+
+}
+
+
+function openLogin(){
+
+document.getElementById("login-page").classList.remove("hidden");
+document.querySelector(".welcome").style.display="none";
+
+}
+
+
+function showLogin(){
+
+document.getElementById("signup-page").classList.add("hidden");
+document.getElementById("login-page").classList.remove("hidden");
+
+}
+
+
+function showSignup(){
+
+document.getElementById("login-page").classList.add("hidden");
+document.getElementById("signup-page").classList.remove("hidden");
+
+}
+
+
+function createAccount(){
+
+alert("ChatTBM account created successfully 🚀");
+
+}
+
+
+function loginUser(){
+
+alert("Welcome back to ChatTBM 👋");
+
+}
 
 }
