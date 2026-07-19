@@ -104,16 +104,7 @@ function quickMessage(text){
     sendMessage();
 
 }
-function openSignup(){
-
-alert("Welcome to ChatTBM Sign Up page 🚀");
-
-}
-
-
-function openLogin(){
-
-function openSignup(){
+functionfunction openSignup(){
 
 document.getElementById("signup-page").classList.remove("hidden");
 document.querySelector(".welcome").style.display="none";
@@ -155,7 +146,5 @@ alert("ChatTBM account created successfully 🚀");
 function loginUser(){
 
 alert("Welcome back to ChatTBM 👋");
-
-}
 
 }
