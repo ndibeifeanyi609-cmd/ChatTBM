@@ -157,96 +157,18 @@
             border-radius: 16px;
             border: 1px solid #1f1f1f;
         }
+
+        /* New Logo Section */
+        .brand-logo {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">ChatTBM</div>
-        <nav>
-            <a href="login.html">Login</a>
-            <a href="#">Features</a>
-            <a href="#">For Creators</a>
-            <a href="#">API</a>
-        </nav>
-    </header>
 
-    <div class="hero">
-        <div class="left">
-            <h1>Meet <span class="gradient-text">ChatTBM</span></h1>
-            <p class="tagline">Your personal AI that speaks Naija, creates content, solves problems, and keeps it real.</p>
-            
-            <div style="margin-top:50px;">
-                <a href="login.html" style="background:#00ff9d; color:black; padding:16px 40px; border-radius:999px; text-decoration:none; font-weight:600; font-size:1.1rem;">Start Chatting Free</a>
-            </div>
-        </div>
-
-        <!-- Live Chat Demo -->
-        <div class="right">
-            <div class="chat-window">
-                <div class="chat-header">ChatTBM • Online</div>
-                <div class="messages" id="messages">
-                    <div class="msg msg-bot">Hello Ifeanyi! How can I help you create something viral today? 🔥</div>
-                </div>
-                <div class="input-area">
-                    <div class="input-box">
-                        <input type="text" id="userInput" placeholder="Type your message...">
-                        <button onclick="sendMessage()">↑</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="features">
-        <h2 style="text-align:center; font-size:2.6rem; margin-bottom:60px;">Powerful Features</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Content Creation</h3>
-                <p>Captions, thumbnails, scripts, and full posts in seconds.</p>
-            </div>
-            <div class="card">
-                <h3>Naija Intelligence</h3>
-                <p>Understands Pidgin, local trends, markets, and culture.</p>
-            </div>
-            <div class="card">
-                <h3>Creative Studio</h3>
-                <p>Image prompts, meme ideas, storytelling for your pages.</p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('userInput');
-            const messages = document.getElementById('messages');
-            
-            if (input.value.trim() === '') return;
-            
-            // Add user message
-            const userMsg = document.createElement('div');
-            userMsg.className = 'msg msg-user';
-            userMsg.textContent = input.value;
-            messages.appendChild(userMsg);
-            
-            // Scroll to bottom
-            messages.scrollTop = messages.scrollHeight;
-            
-            // Simulate AI reply
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'msg msg-bot';
-                botMsg.textContent = "Great idea! Here's a quick viral caption for that: 'Naija hustle no get duplicate 🔥 What's next boss?' Want me to generate more?";
-                messages.appendChild(botMsg);
-                messages.scrollTop = messages.scrollHeight;
-            }, 800);
-            
-            input.value = '';
-        }
-        
-        // Allow Enter key
-        document.getElementById('userInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') sendMessage();
-        });
-    </script>
-</body>
-</html>
+    <!-- New Big Logo Section -->
+    <div class="brand-logo">
+        <img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.jpg" 
+             alt="ChatT
