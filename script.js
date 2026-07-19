@@ -131,3 +131,45 @@ function quickMessage(text) {
     sendMessage();
 
 }
+
+// ChatTBM Login & Signup System
+
+function openLogin() {
+
+    let email = prompt("Enter your email:");
+
+    let password = prompt("Enter your password:");
+
+    if (email && password) {
+
+        alert("✅ Login successful! Welcome to ChatTBM.");
+
+    } else {
+
+        alert("Please enter email and password.");
+
+    }
+
+}
+
+
+
+function openSignup() {
+
+    let name = prompt("Create your username:");
+
+    let email = prompt("Enter your email:");
+
+    let password = prompt("Create a password:");
+
+    if (name && email && password) {
+
+        alert("🎉 Account created successfully! Welcome to ChatTBM, " + name);
+
+    } else {
+
+        alert("Please complete all fields.");
+
+    }
+
+}
