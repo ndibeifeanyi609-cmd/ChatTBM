@@ -4,262 +4,264 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>ChatTBM - AI Content Assistant</title>
 
 <link rel="stylesheet" href="style.css">
 
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
 
 <body>
 
-
 <div class="app">
 
+<!-- ================= HEADER ================= -->
 
-<header>
+<header class="topbar">
 
-<img src="ChatTBM08AD4FA908AD4FA9d08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" class="logo">
+<div class="left">
+
+<img src="logo.png" class="logo" alt="ChatTBM Logo">
+
+<div>
 
 <h1>ChatTBM</h1>
 
 <p>Your AI Content Assistant</p>
 
+</div>
+
+</div>
+
+<div class="right">
+
+<button class="icon-btn" onclick="newChat()">
+
+＋ New Chat
+
+</button>
+
+<button class="icon-btn">
+
+⚙️
+
+</button>
+
+</div>
+
 </header>
 
+<!-- ================= HERO ================= -->
 
+<section class="hero">
 
-<!-- Welcome Screen -->
+<img src="logo.png" class="hero-logo" alt="ChatTBM">
 
-<div class="welcome">
-
-
-<img src="ChatTBM Logo.png" class="main-logo">
-
-
-<h2>Welcome to ChatTBM</h2>
-
+<h2>Create Better Content with AI</h2>
 
 <p>
-Your AI Content Assistant for captions, scripts, viral ideas and creativity.
+
+Generate captions, scripts, hashtags,
+
+Facebook posts, Instagram captions,
+
+ad copies and viral ideas in seconds.
+
 </p>
 
+<div class="hero-buttons">
 
+<button class="signup"
 
-<div class="auth-buttons">
-
-
-<button class="signup" onclick="openSignup()">
+onclick="openSignup()">
 
 Create Account
 
 </button>
 
+<button class="login"
 
-
-<button class="login" onclick="openLogin()">
+onclick="openLogin()">
 
 Log In
 
 </button>
 
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+<div class="card">
+
+✨
+
+<h3>Captions</h3>
+
+<p>Create engaging captions instantly.</p>
 
 </div>
 
+<div class="card">
 
+🎬
 
-<p class="small-text">
+<h3>Scripts</h3>
 
-Join creators using AI to create better content faster.
-
-</p>
-
+<p>Generate video scripts in seconds.</p>
 
 </div>
 
+<div class="card">
 
+🔥
 
+<h3>Viral Ideas</h3>
 
+<p>Never run out of content ideas.</p>
 
-<!-- Signup Page -->
+</div>
+
+<div class="card">
+
+📈
+
+<h3>Grow Faster</h3>
+
+<p>Build your audience with AI.</p>
+
+</div>
+
+</section>
+
+<!-- ================= SIGNUP PAGE ================= -->
 
 <div class="auth-page hidden" id="signup-page">
 
+    <img src="logo.png" class="main-logo" alt="ChatTBM Logo">
 
-<img src="ChatTBM Logo.png" class="main-logo">
+    <h2>Create your ChatTBM account</h2>
 
+    <p>Start creating amazing content with AI.</p>
 
-<h2>Create your ChatTBM account</h2>
+    <input
+        type="text"
+        id="signup-name"
+        placeholder="Full Name"
+        autocomplete="name">
 
+    <input
+        type="email"
+        id="signup-email"
+        placeholder="Email Address"
+        autocomplete="email">
 
-<input type="text" id="signup-name" placeholder="Your name">
+    <input
+        type="password"
+        id="signup-password"
+        placeholder="Password"
+        autocomplete="new-password">
 
+    <button class="primary-btn" onclick="createAccount()">
+        Create Account
+    </button>
 
-<input type="email" id="signup-email" placeholder="Email address">
-
-
-<input type="password" id="signup-password" placeholder="Password">
-
-
-<button onclick="createAccount()">
-
-Create Account
-
-</button>
-
-
-
-<p onclick="showLogin()">
-
-Already have an account? Log In
-
-</p>
-
+    <p class="switch-link" onclick="showLogin()">
+        Already have an account? <strong>Log In</strong>
+    </p>
 
 </div>
 
-
-
-
-
-<!-- Login Page -->
-
+<!-- ================= LOGIN PAGE ================= -->
 
 <div class="auth-page hidden" id="login-page">
 
+    <img src="logo.png" class="main-logo" alt="ChatTBM Logo">
 
-<img src="ChatTBM Logo.png" class="main-logo">
+    <h2>Welcome Back</h2>
 
+    <p>Log in to continue using ChatTBM.</p>
 
-<h2>Welcome Back</h2>
+    <input
+        type="email"
+        id="login-email"
+        placeholder="Email Address"
+        autocomplete="email">
 
+    <input
+        type="password"
+        id="login-password"
+        placeholder="Password"
+        autocomplete="current-password">
 
+    <button class="primary-btn" onclick="loginUser()">
+        Log In
+    </button>
 
-<input type="email" id="login-email" placeholder="Email address">
-
-
-<input type="password" id="login-password" placeholder="Password">
-
-
-<button onclick="loginUser()">
-
-Log In
-
-</button>
-
-
-
-<p onclick="showSignup()">
-
-Create new account
-
-</p>
-
+    <p class="switch-link" onclick="showSignup()">
+        Don't have an account? <strong>Create One</strong>
+    </p>
 
 </div>
 
+<!-- ================= CHAT AREA ================= -->
 
-
-
-
-
-<!-- Chat Area -->
-
+<section class="chat-section">
 
 <div id="chat-box">
 
-
 <div class="message bot">
 
-👋 Hello, I’m ChatTBM.
+👋 <strong>Hello, I'm ChatTBM.</strong>
 
 <br><br>
 
-Create captions, scripts, hashtags and viral content ideas with AI.
+I can help you create:
+
+<br>✅ Viral Captions
+
+<br>✅ Video Scripts
+
+<br>✅ Facebook Posts
+
+<br>✅ Instagram Captions
+
+<br>✅ Hashtags
+
+<br>✅ Advert Copies
+
+<br>✅ Content Calendars
+
+<br><br>
+
+How can I help you today?
 
 </div>
 
-
 </div>
 
+<!-- Typing Indicator -->
 
+<div id="typing-indicator" class="hidden">
 
+<div class="typing">
 
+<span></span>
 
-<!-- Quick Buttons -->
+<span></span>
 
-
-<div class="quick-buttons">
-
-
-<button onclick="quickMessage('Create a viral caption')">
-
-✨ Caption
-
-</button>
-
-
-
-<button onclick="quickMessage('Write a video script')">
-
-🎬 Script
-
-</button>
-
-
-
-<button onclick="quickMessage('Give me hashtags')">
-
-#️⃣ Hashtags
-
-</button>
-
-
-
-<button onclick="quickMessage('Give me viral content ideas')">
-
-🔥 Viral Ideas
-
-</button>
-
+<span></span>
 
 </div>
-
-
-
-
-
-
-
-<!-- Input -->
-
-
-<div class="input-area">
-
-
-<input id="user-input" placeholder="Ask ChatTBM anything...">
-
-
-<button onclick="sendMessage()">
-
-➤
-
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-
-<script src="script.js"></script>
-
-
-</body>
-
-</html>
