@@ -10,27 +10,54 @@
 
 </head>
 
-<body>
-
-<div class="app">
-
-<header>
-
-<img src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" class="logo">
-
-<h1>ChatTBM</h1>
-
-<p>Your AI Content Assistant</p>
-
-</header>
-
-<div id="chat-box">
-
-<div class="welcome">
+<div class="auth-page" id="signup-page">
 
 <img src="ChatTBM Logo.png" class="main-logo">
 
-<h2>Welcome to ChatTBM</h2>
+<h2>Create your ChatTBM account</h2>
+
+<input type="text" id="signup-name" placeholder="Your name">
+
+<input type="email" id="signup-email" placeholder="Email address">
+
+<input type="password" id="signup-password" placeholder="Password">
+
+
+<button onclick="createAccount()">
+Create Account
+</button>
+
+
+<p onclick="showLogin()">
+Already have an account? Log In
+</p>
+
+</div>
+
+
+
+<div class="auth-page hidden" id="login-page">
+
+<img src="ChatTBM Logo.png" class="main-logo">
+
+<h2>Welcome Back</h2>
+
+
+<input type="email" id="login-email" placeholder="Email address">
+
+<input type="password" id="login-password" placeholder="Password">
+
+
+<button onclick="loginUser()">
+Log In
+</button>
+
+
+<p onclick="showSignup()">
+Create new account
+</p>
+
+</div>
 
 <p>
 Your AI Content Assistant for captions, scripts, viral ideas and creativity.
