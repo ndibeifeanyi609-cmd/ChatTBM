@@ -128,13 +128,12 @@ document.getElementById("login-page").classList.remove("hidden");
 }
 
 
-function showSignup(){
+functionfunction openSignup(){
 
-document.getElementById("login-page").classList.add("hidden");
 document.getElementById("signup-page").classList.remove("hidden");
+document.querySelector(".welcome").style.display="none";
 
 }
-
 
 function createAccount(){
 
