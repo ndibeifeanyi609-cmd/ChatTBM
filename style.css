@@ -1,279 +1,501 @@
-it<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ChatTBM - AI Content Assistant</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-
-<body>
-
-
-<div class="app">
-
-
-<header>
-
-<img src="ChatTBM Logo.png" class="logo">
-
-<h1>ChatTBM</h1>
-
-<p>Your AI Content Assistant</p>
-
-</header>
-
-
-
-<!-- Welcome Screen -->
-
-<div class="welcome">
-
-
-<img src="ChatTBM Logo.png" class="main-logo">
-
-
-<h2>Welcome to ChatTBM</h2>
-
-
-<p>
-Your AI Content Assistant for captions, scripts, viral ideas and creativity.
-</p>
-
-
-
-<div class="auth-buttons">
-
-
-<button class="signup" onclick="openSignup()">
-
-Create Account
-
-</button>
-
-
-
-<button class="login" onclick="openLogin()">
-
-Log In
-
-</button>
-
-
-</div>
-
-
-
-<p class="small-text">
-
-Join creators using AI to create better content faster.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<!-- Signup Page -->
-
-<div class="auth-page hidden" id="signup-page">
-
-
-<img src="ChatTBM Logo.png" class="main-logo">
-
-
-<h2>Create your ChatTBM account</h2>
-
-
-<input type="text" id="signup-name" placeholder="Your name">
-
-
-<input type="email" id="signup-email" placeholder="Email address">
-
-
-<input type="password" id="signup-password" placeholder="Password">
-
-
-<button onclick="createAccount()">
-
-Create Account
-
-</button>
-
-
-
-<p onclick="showLogin()">
-
-Already have an account? Log In
-
-</p>
-
-
-</div>
-
-
-
-
-
-<!-- Login Page -->
-
-
-<div class="auth-page hidden" id="login-page">
-
-
-<img src="ChatTBM Logo.png" class="main-logo">
-
-
-<h2>Welcome Back</h2>
-
-
-
-<input type="email" id="login-email" placeholder="Email address">
-
-
-<input type="password" id="login-password" placeholder="Password">
-
-
-<button onclick="loginUser()">
-
-Log In
-
-</button>
-
-
-
-<p onclick="showSignup()">
-
-Create new account
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<!-- Chat Area -->
-
-
-<div id="chat-box">
-
-
-<div class="message bot">
-
-👋 Hello, I’m ChatTBM.
-
-<br><br>
-
-Create captions, scripts, hashtags and viral content ideas with AI.
-
-</div>
-
-
-</div>
-
-
-
-
-
-<!-- Quick Buttons -->
-
-
-<div class="quick-buttons">
-
-
-<button onclick="quickMessage('Create a viral caption')">
-
-✨ Caption
-
-</button>
-
-
-
-<button onclick="quickMessage('Write a video script')">
-
-🎬 Script
-
-</button>
-
-
-
-<button onclick="quickMessage('Give me hashtags')">
-
-#️⃣ Hashtags
-
-</button>
-
-
-
-<button onclick="quickMessage('Give me viral content ideas')">
-
-🔥 Viral Ideas
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Input -->
-
-
-<div class="input-area">
-
-
-<input id="user-input" placeholder="Ask ChatTBM anything...">
-
-
-<button onclick="sendMessage()">
-
-➤
-
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-
-<script src="script.js"></script>
-
-
-</body>
-
-</html>
+/* ===========================
+   ChatTBM AI - STYLE.CSS
+   PART 1
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:#ffffff;
+    min-height:100vh;
+}
+
+.app{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ================= HEADER ================= */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+    background:#111827;
+    border-bottom:1px solid #1f2937;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
 
 .logo{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    object-fit:cover;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+}
+
+.left h1{
+    font-size:22px;
+    font-weight:700;
+}
+
+.left p{
+    font-size:13px;
+    color:#9ca3af;
+}
+
+.right{
+    display:flex;
+    gap:10px;
+}
+
+.icon-btn{
+    background:#1f2937;
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.icon-btn:hover{
+    background:#2563eb;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero-logo{
+    width:100px;
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:17px;
+    line-height:1.7;
+    max-width:600px;
+    margin:auto;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.signup,
+.login{
+    border:none;
+    padding:14px 30px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.signup{
+    background:#2563eb;
+    color:#fff;
+}
+
+.login{
+    background:#1f2937;
+    color:#fff;
+}
+
+/* ===========================
+   FEATURE CARDS
+=========================== */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    padding:20px;
+}
+
+.card{
+    background:#111827;
+    border:1px solid #1f2937;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#2563eb;
+}
+
+.card h3{
+    margin:15px 0 10px;
+    font-size:20px;
+}
+
+.card p{
+    color:#cbd5e1;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ===========================
+   SIGNUP & LOGIN
+=========================== */
+
+.auth-page{
+    max-width:420px;
+    margin:40px auto;
+    background:#111827;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #1f2937;
+}
+
+.hidden{
+    display:none;
 }
 
 .main-logo{
-    width:100px;
-    height:100px;
+    width:90px;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.auth-page h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.auth-page p{
+    text-align:center;
+    color:#9ca3af;
+    margin-bottom:20px;
+}
+
+.auth-page input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:12px;
+    background:#1f2937;
+    color:#fff;
+    font-size:15px;
+    outline:none;
+}
+
+.primary-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.primary-btn:hover{
+    background:#1d4ed8;
+}
+
+.switch-link{
+    margin-top:15px;
+    cursor:pointer;
+    color:#60a5fa;
+}
+
+/* ===========================
+   CHAT SECTION
+=========================== */
+
+.chat-section{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+}
+
+#chat-box{
+    flex:1;
+    background:#111827;
+    border:1px solid #1f2937;
+    border-radius:18px;
+    padding:20px;
+    overflow-y:auto;
+    min-height:350px;
+}
+
+.message{
+    max-width:80%;
+    padding:15px 18px;
+    border-radius:18px;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.bot{
+    background:#1f2937;
+    color:#fff;
+    align-self:flex-start;
+}
+
+.user{
+    background:#2563eb;
+    color:#fff;
+    margin-left:auto;
+}
+
+#typing-indicator{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+    color:#9ca3af;
+}
+
+.typing span{
+    width:8px;
+    height:8px;
     border-radius:50%;
-    object-fit:cover;
+    background:#60a5fa;
+    display:inline-block;
+    animation:typing 1.2s infinite;
+}
+
+.typing span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.typing span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes typing{
+    0%,80%,100%{
+        transform:scale(.6);
+        opacity:.5;
+    }
+    40%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* ===========================
+   QUICK BUTTONS
+=========================== */
+
+.quick-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:15px 20px;
+    justify-content:center;
+}
+
+.quick-buttons button{
+    background:#1f2937;
+    color:#fff;
+    border:none;
+    border-radius:30px;
+    padding:12px 18px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:14px;
+    font-weight:500;
+}
+
+.quick-buttons button:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   INPUT AREA
+=========================== */
+
+.input-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:18px 20px;
+    background:#111827;
+    border-top:1px solid #1f2937;
+    position:sticky;
+    bottom:0;
+}
+
+.tool-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#1f2937;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tool-btn:hover{
+    background:#2563eb;
+}
+
+#user-input{
+    flex:1;
+    height:48px;
+    border:none;
+    border-radius:25px;
+    padding:0 18px;
+    background:#1f2937;
+    color:#fff;
+    font-size:15px;
+    outline:none;
+}
+
+#user-input::placeholder{
+    color:#9ca3af;
+}
+
+#send-btn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#send-btn:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#9ca3af;
+    font-size:14px;
+    border-top:1px solid #1f2937;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#374151;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#2563eb;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.topbar{
+    padding:15px;
+}
+
+.hero{
+    padding:35px 15px;
+}
+
+.hero h2{
+    font-size:28px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.features{
+    grid-template-columns:1fr;
+}
+
+.quick-buttons{
+    justify-content:flex-start;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    padding-bottom:10px;
+}
+
+.quick-buttons button{
+    white-space:nowrap;
+}
+
+#chat-box{
+    min-height:280px;
+}
+
+.input-area{
+    padding:12px;
+}
+
+.logo{
+    width:36px;
+    height:36px;
+}
+
+.left h1{
+    font-size:20px;
+}
+
+.left p{
+    font-size:12px;
+}
+
 }
