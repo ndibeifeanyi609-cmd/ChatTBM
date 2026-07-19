@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,116 +12,254 @@
 
 </head>
 
-<div class="auth-page" id="signup-page">
+
+<body>
+
+
+<div class="app">
+
+
+<header>
+
+<img src="ChatTBM Logo.png" class="logo">
+
+<h1>ChatTBM</h1>
+
+<p>Your AI Content Assistant</p>
+
+</header>
+
+
+
+<!-- Welcome Screen -->
+
+<div class="welcome">
+
 
 <img src="ChatTBM Logo.png" class="main-logo">
 
-<h2>Create your ChatTBM account</h2>
 
-<input type="text" id="signup-name" placeholder="Your name">
+<h2>Welcome to ChatTBM</h2>
 
-<input type="email" id="signup-email" placeholder="Email address">
-
-<input type="password" id="signup-password" placeholder="Password">
-
-
-<button onclick="createAccount()">
-Create Account
-</button>
-
-
-<p onclick="showLogin()">
-Already have an account? Log In
-</p>
-
-</div>
-
-
-
-<div class="auth-page hidden" id="login-page">
-
-<img src="ChatTBM Logo.png" class="main-logo">
-
-<h2>Welcome Back</h2>
-
-
-<input type="email" id="login-email" placeholder="Email address">
-
-<input type="password" id="login-password" placeholder="Password">
-
-
-<button onclick="loginUser()">
-Log In
-</button>
-
-
-<p onclick="showSignup()">
-Create new account
-</p>
-
-</div>
 
 <p>
 Your AI Content Assistant for captions, scripts, viral ideas and creativity.
 </p>
 
+
+
 <div class="auth-buttons">
 
+
 <button class="signup" onclick="openSignup()">
+
 Create Account
+
 </button>
+
+
 
 <button class="login" onclick="openLogin()">
+
 Log In
-</button>
+
 </button>
 
+
 </div>
+
+
 
 <p class="small-text">
+
 Join creators using AI to create better content faster.
+
 </p>
 
+
 </div>
+
+
+
+
+
+<!-- Signup Page -->
+
+<div class="auth-page hidden" id="signup-page">
+
+
+<img src="ChatTBM Logo.png" class="main-logo">
+
+
+<h2>Create your ChatTBM account</h2>
+
+
+<input type="text" id="signup-name" placeholder="Your name">
+
+
+<input type="email" id="signup-email" placeholder="Email address">
+
+
+<input type="password" id="signup-password" placeholder="Password">
+
+
+<button onclick="createAccount()">
+
+Create Account
+
+</button>
+
+
+
+<p onclick="showLogin()">
+
+Already have an account? Log In
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- Login Page -->
+
+
+<div class="auth-page hidden" id="login-page">
+
+
+<img src="ChatTBM Logo.png" class="main-logo">
+
+
+<h2>Welcome Back</h2>
+
+
+
+<input type="email" id="login-email" placeholder="Email address">
+
+
+<input type="password" id="login-password" placeholder="Password">
+
+
+<button onclick="loginUser()">
+
+Log In
+
+</button>
+
+
+
+<p onclick="showSignup()">
+
+Create new account
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- Chat Area -->
+
+
+<div id="chat-box">
+
+
+<div class="message bot">
+
+👋 Hello, I’m ChatTBM.
+
+<br><br>
+
+Create captions, scripts, hashtags and viral content ideas with AI.
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Quick Buttons -->
 
 
 <div class="quick-buttons">
 
+
 <button onclick="quickMessage('Create a viral caption')">
+
 ✨ Caption
+
 </button>
+
+
 
 <button onclick="quickMessage('Write a video script')">
+
 🎬 Script
+
 </button>
+
+
 
 <button onclick="quickMessage('Give me hashtags')">
+
 #️⃣ Hashtags
+
 </button>
 
+
+
 <button onclick="quickMessage('Give me viral content ideas')">
+
 🔥 Viral Ideas
+
 </button>
+
 
 </div>
 
+
+
+
+
+
+
+<!-- Input -->
 
 
 <div class="input-area">
 
+
 <input id="user-input" placeholder="Ask ChatTBM anything...">
 
+
 <button onclick="sendMessage()">
+
 ➤
+
 </button>
 
+
 </div>
 
 
+
 </div>
+
 
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
