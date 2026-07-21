@@ -1,34 +1,60 @@
 <!-- ===================================
      ChatTBM v2.1 FINAL
      INDEX.HTML PART 1
-     Head • App • Header
+     Head • App Start • Header
 =================================== -->
 
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 
 <head>
 
+
 <meta charset="UTF-8">
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ChatTBM - AI Content Assistant</title>
+
+<title>
+
+ChatTBM - AI Content Assistant
+
+</title>
+
+
 
 <link rel="stylesheet" href="style.css">
 
+
+
 </head>
+
+
+
 
 
 <body>
 
 
+
+
+
 <div class="app">
+
+
+
 
 
 <!-- Header -->
 
+
 <header>
+
+
 
 
 <button onclick="toggleSidebar()" class="menu-btn">
@@ -39,39 +65,78 @@
 
 
 
-<img 
+
+
+
+<img
+
 src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png"
+
 class="hero-logo"
+
 alt="ChatTBM Logo"
+
 >
+
+
+
 
 
 
 <h1>
 
-<span class="brand">Chat</span>TBM
+
+<span class="brand">
+
+Chat
+
+</span>
+
+
+TBM
+
 
 </h1>
 
 
 
+
+
+
 <p>
 
+
 Your AI Content Assistant for Captions,
+
+<br>
+
 Scripts & Viral Ideas
+
 
 </p>
 
 
 
 
+
+
+
+
 <div class="status">
+
 
 <span class="status-dot"></span>
 
+
 ChatTBM Online
 
+
+
 </div>
+
+
+
+
 
 
 
@@ -79,22 +144,35 @@ ChatTBM Online
 <div class="auth-buttons">
 
 
+
 <button onclick="openLogin()">
+
 
 Login
 
+
 </button>
+
+
 
 
 
 <button onclick="openSignup()">
 
+
+
 Sign Up
+
+
 
 </button>
 
 
+
 </div>
+
+
+
 
 
 </header>
@@ -103,26 +181,41 @@ Sign Up
 
 
 
+
+
+
+
 <!-- Welcome Section -->
+
 
 
 <section class="welcome" id="welcome-message">
 
 
+
 <h2>
 
+
 Welcome to ChatTBM 👋
+
 
 </h2>
 
 
 
+
+
 <p>
 
+
 Create captions, scripts, adverts,
+
 hashtags and viral content ideas with AI.
 
+
 </p>
+
+
 
 
 
@@ -137,71 +230,129 @@ hashtags and viral content ideas with AI.
 
 <!-- Sidebar -->
 
+
 <div id="sidebar" class="sidebar">
+
+
+
 
 
 <h2 class="sidebar-title">
 
+
 ChatTBM Menu
+
 
 </h2>
 
 
 
+
+
+
 <button onclick="newChat()">
+
+
 
 ➕ New Chat
 
+
+
 </button>
+
+
+
 
 
 
 <button onclick="clearChat()">
 
+
+
 🗑 Clear Chat
 
+
+
 </button>
+
+
+
 
 
 
 <button onclick="openSettings()">
 
+
+
 ⚙️ Settings
 
+
+
 </button>
+
+
+
 
 
 
 <button onclick="showProfile()">
 
+
+
 👤 Profile
 
+
+
 </button>
+
+
+
 
 
 
 <button onclick="downloadChat()">
 
+
+
 📄 Download Chat
 
+
+
 </button>
+
+
+
 
 
 
 <button onclick="shareChat()">
 
+
+
 📤 Share Chat
 
+
+
 </button>
+
+
 
 
 
 
 <button onclick="logoutUser()">
 
+
+
 🚪 Logout
 
+
+
 </button>
+
+
+
+
 
 
 
@@ -209,9 +360,17 @@ ChatTBM Menu
 
 <div id="account-status">
 
+
+
 👤 Guest
 
+
+
 </div>
+
+
+
+
 
 
 
@@ -219,20 +378,35 @@ ChatTBM Menu
 
 <h3>
 
+
+
 Chat History
+
+
 
 </h3>
 
 
 
 
+
+
 <div id="history-list">
 
+
+
 </div>
 
 
 
+
+
+
 </div>
+
+
+
+
 
 
 
@@ -241,7 +415,11 @@ Chat History
 <!-- Chat Section -->
 
 
+
 <section class="chat-section">
+
+
+
 
 
 
@@ -249,28 +427,48 @@ Chat History
 
 
 
+
+
+
 <div class="bot-message">
+
+
+
 
 
 
 <div class="bot-info">
 
 
+
 <span class="bot-name">
+
 
 🤖 ChatTBM
 
+
 </span>
+
+
+
 
 
 <span class="bot-time">
 
+
 Now
+
 
 </span>
 
 
+
 </div>
+
+
+
+
+
 
 
 
@@ -280,21 +478,52 @@ Now
 
 👋 Welcome to ChatTBM!
 
+
+
+
 I can help you create:
 
-• Captions  
-• Video Scripts  
-• Facebook Posts  
-• Hashtags  
-• Advert Ideas  
+
+
+
+• Captions
+
+<br>
+
+• Video Scripts
+
+<br>
+
+• Facebook Posts
+
+<br>
+
+• Hashtags
+
+<br>
+
+• Advert Ideas
+
+<br>
+
 • Viral Content Plans
+
+
+
 
 
 </p>
 
 
 
+
+
+
+
 </div>
+
+
+
 
 
 
@@ -307,67 +536,105 @@ I can help you create:
 =================================== -->
 
 
+
+
+
 <!-- Quick Action Buttons -->
+
 
 
 <div class="quick-buttons">
 
 
 
+
+
+
 <button onclick="quickMessage('Give me a viral video idea')">
+
 
 🎬 Video Idea
 
+
 </button>
+
+
+
 
 
 
 
 <button onclick="quickMessage('Create a caption')">
 
+
 ✍️ Caption
 
+
 </button>
+
+
+
 
 
 
 
 <button onclick="quickMessage('Write a short script')">
 
+
 📝 Script
 
+
 </button>
+
+
+
 
 
 
 
 <button onclick="quickMessage('Give me hashtags')">
 
+
 #️⃣ Hashtags
 
+
 </button>
+
+
+
 
 
 
 
 <button onclick="quickMessage('Create an advert idea')">
 
+
 📢 Advert
 
+
 </button>
+
+
+
 
 
 
 
 <button onclick="quickMessage('Create a content calendar')">
 
+
 📅 Calendar
+
 
 </button>
 
 
 
+
+
+
 </div>
+
 
 
 
@@ -378,17 +645,23 @@ I can help you create:
 <!-- AI Typing Loading -->
 
 
+
 <div id="loading" class="typing" style="display:none;">
 
 
-<span></span>
 
 <span></span>
 
+
 <span></span>
+
+
+<span></span>
+
 
 
 </div>
+
 
 
 
@@ -400,38 +673,66 @@ I can help you create:
 <!-- Message Input -->
 
 
+
 <div class="input-area">
+
+
+
 
 
 
 <input
 
+
 type="text"
+
 
 id="user-input"
 
+
 placeholder="Ask ChatTBM anything..."
 
+
+
+
 >
+
+
+
+
 
 
 
 
 <button
 
+
 id="send-btn"
+
 
 onclick="sendMessage()"
 
+
+
 >
 
+
 Send
+
+
 
 </button>
 
 
 
+
+
+
+
 </div>
+
+
+
 
 
 
@@ -446,70 +747,123 @@ Send
 =================================== -->
 
 
+
+
+
 <!-- Login Modal -->
 
+
+
 <div id="loginModal" class="modal">
+
+
+
 
 
 <div class="modal-content">
 
 
+
+
+
+
 <h2>
 
+
 Login To ChatTBM
+
 
 </h2>
 
 
 
 
+
+
+
 <input
+
 
 type="email"
 
+
 id="loginEmail"
+
 
 placeholder="Email"
 
+
+
 >
+
+
+
 
 
 
 
 <input
 
+
 type="password"
+
 
 id="loginPassword"
 
+
 placeholder="Password"
 
+
+
 >
+
+
+
+
 
 
 
 
 <button onclick="loginUser()">
 
+
+
 Login
 
+
+
 </button>
+
+
+
 
 
 
 
 <button onclick="closeLogin()">
 
+
+
 Cancel
+
+
 
 </button>
 
 
 
-</div>
+
+
 
 
 </div>
+
+
+
+
+
+</div>
+
 
 
 
@@ -521,81 +875,147 @@ Cancel
 <!-- Signup Modal -->
 
 
+
 <div id="signupModal" class="modal">
+
+
+
+
 
 
 <div class="modal-content">
 
 
+
+
+
+
+
 <h2>
 
+
 Create ChatTBM Account
+
 
 </h2>
 
 
 
 
+
+
+
 <input
+
 
 type="text"
 
+
 id="signupName"
+
 
 placeholder="Full Name"
 
+
+
 >
 
 
 
 
+
+
+
+
 <input
+
 
 type="email"
 
+
 id="signupEmail"
+
 
 placeholder="Email"
 
+
+
 >
+
+
+
+
 
 
 
 
 <input
 
+
 type="password"
+
 
 id="signupPassword"
 
+
 placeholder="Password"
 
+
+
 >
+
+
+
+
 
 
 
 
 <button onclick="signupUser()">
 
+
+
 Create Account
 
+
+
 </button>
+
+
+
+
 
 
 
 
 <button onclick="closeSignup()">
 
+
+
 Cancel
+
+
 
 </button>
 
 
 
-</div>
+
+
 
 
 </div>
+
+
+
+
+
+
+
+</div>
+
+
+
 
 
 
@@ -608,112 +1028,202 @@ Cancel
 <!-- Settings Modal -->
 
 
+
 <div id="settingsModal" class="modal">
+
+
+
+
+
 
 
 <div class="modal-content">
 
 
+
+
+
+
+
 <h2>
 
+
 ChatTBM Settings
+
 
 </h2>
 
 
 
 
+
+
+
+
 <input
+
 
 type="text"
 
+
 id="username"
 
+
 placeholder="Enter username"
+
+
 
 >
 
 
 
 
+
+
+
+
 <button onclick="saveUsername()">
+
+
 
 Save Username
 
+
+
 </button>
+
+
+
+
 
 
 
 
 <button onclick="toggleTheme()">
 
+
+
 🌙 Toggle Theme
 
+
+
 </button>
+
+
+
+
 
 
 
 
 <button onclick="clearAllData()">
 
+
+
 🗑 Delete All Data
 
+
+
 </button>
+
+
+
+
 
 
 
 
 <button onclick="closeSettings()">
 
+
+
 Close
+
+
 
 </button>
 
 
 
+
+
+
+
 </div>
+
+
+
+
+
 
 
 </div>
 
 <!-- ===================================
      ChatTBM v2.1 FINAL
-     INDEX.HTML PART 5 UPDATED
-     Profile • Extra Features • Footer
+     INDEX.HTML PART 5
+     Profile • Extra Features • Footer • Script
 =================================== -->
+
+
+
 
 
 <!-- Profile Section -->
 
 
+
 <div class="profile-card">
+
+
+
 
 
 <h3>
 
+
 👤 ChatTBM Profile
+
 
 </h3>
 
 
 
-<p id="account-status">
+
+
+
+
+<p id="profile-name">
+
 
 👤 Guest User
 
+
 </p>
+
+
+
+
 
 
 
 <p>
 
+
 Your AI Content Assistant
+
 
 </p>
 
 
 
+
+
+
+
 </div>
+
+
 
 
 
@@ -724,55 +1234,97 @@ Your AI Content Assistant
 <!-- Extra Feature Buttons -->
 
 
+
 <div class="extra-buttons">
+
+
+
 
 
 
 <button onclick="startVoice()">
 
+
+
 🎤 Voice
 
+
+
 </button>
+
+
+
 
 
 
 
 <button onclick="showVersion()">
 
+
+
 ℹ️ Version
 
+
+
 </button>
+
+
+
 
 
 
 
 <button onclick="backupChat()">
 
+
+
 💾 Backup
 
+
+
 </button>
+
+
+
 
 
 
 
 <button onclick="restoreBackup()">
 
+
+
 ♻️ Restore
 
+
+
 </button>
+
+
+
 
 
 
 
 <button onclick="logoutUser()">
 
+
+
 🚪 Logout
+
+
 
 </button>
 
 
 
+
+
+
+
 </div>
+
+
 
 
 
@@ -783,11 +1335,16 @@ Your AI Content Assistant
 <!-- App Version -->
 
 
+
 <div class="version">
+
 
 ChatTBM v2.1
 
+
 </div>
+
+
 
 
 
@@ -798,25 +1355,44 @@ ChatTBM v2.1
 <!-- Footer -->
 
 
+
 <div class="footer">
 
 
+
+
+
 <p>
+
 
 ChatTBM v2.1
 
+
 </p>
+
+
+
+
 
 
 
 <p>
 
+
 Your AI Content Assistant for Captions,
+
+<br>
+
 Scripts & Viral Ideas 🚀
+
 
 </p>
 
 
+
+
+
+
 </div>
 
 
@@ -824,7 +1400,13 @@ Scripts & Viral Ideas 🚀
 
 
 
+
+
+
 </div>
+
+
+
 
 
 
@@ -834,11 +1416,17 @@ Scripts & Viral Ideas 🚀
 <!-- JavaScript -->
 
 
+
 <script src="script.js"></script>
 
 
 
+
+
+
+
 </body>
+
 
 
 </html>
