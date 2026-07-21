@@ -1,16 +1,19 @@
 /* ===================================
-   ChatTBM v2.1
-   STYLE PART 1
-   Main Layout • Theme • Header
+   ChatTBM v2.1 FINAL
+   STYLE.CSS PART 1
+   Reset • Main Layout • Header • Theme
 =================================== */
 
 
 /* Reset */
 
+
 *{
 
 box-sizing:border-box;
+
 margin:0;
+
 padding:0;
 
 }
@@ -18,54 +21,79 @@ padding:0;
 
 
 
+
 /* Body */
+
 
 body{
 
+
 font-family:Arial, sans-serif;
 
+
 background:
+
 radial-gradient(circle at top,#1e293b,#05070a);
+
 
 color:white;
 
+
 height:100vh;
+
 
 display:flex;
 
+
 justify-content:center;
+
 
 align-items:center;
 
+
 overflow:hidden;
+
 
 }
 
 
 
 
-/* App Container */
+
+/* Main App */
+
 
 .app{
 
+
 width:420px;
+
 
 height:90vh;
 
+
 background:#0f1117;
+
 
 border:1px solid #2f3542;
 
+
 border-radius:25px;
+
 
 overflow:hidden;
 
+
 display:flex;
+
 
 flex-direction:column;
 
+
 box-shadow:
+
 0 0 30px rgba(0,0,0,.5);
+
 
 }
 
@@ -75,73 +103,142 @@ box-shadow:
 
 /* Header */
 
+
 header{
+
+
+position:relative;
+
 
 padding:20px;
 
+
 text-align:center;
+
 
 background:#111318;
 
+
 border-bottom:1px solid #2f3542;
 
+
 }
+
+
+
+
+
+/* Menu Button */
+
+
+.menu-btn{
+
+
+position:absolute;
+
+
+left:15px;
+
+
+top:15px;
+
+
+background:#2563eb;
+
+
+color:white;
+
+
+border:none;
+
+
+padding:8px 12px;
+
+
+border-radius:10px;
+
+
+cursor:pointer;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+.menu-btn:hover{
+
+
+background:#3b82f6;
+
+
+}
+
+
 
 
 
 
 /* Logo */
 
+
 .hero-logo{
+
 
 width:90px;
 
+
 height:90px;
+
 
 object-fit:cover;
 
+
 border-radius:22px;
+
 
 display:block;
 
+
 margin:0 auto 15px;
+
 
 border:2px solid #2563eb;
 
+
 }
 
 
 
 
-/* Title */
+
+
+/* Header Title */
+
 
 header h1{
 
+
 font-size:28px;
+
 
 color:white;
 
+
 margin-bottom:8px;
 
+
 text-shadow:
+
 0 0 15px rgba(37,99,235,.5);
 
-}
-
-
-
-
-/* Subtitle */
-
-header p{
-
-font-size:14px;
-
-color:#9ca3af;
-
-line-height:1.5;
 
 }
+
 
 
 
@@ -149,49 +246,42 @@ line-height:1.5;
 
 /* Brand Color */
 
+
 .brand{
+
 
 color:#2563eb;
 
+
 font-weight:bold;
 
-}
-
-
-
-
-
-/* Welcome Section */
-
-.welcome{
-
-text-align:center;
-
-padding:30px 20px;
-
-color:white;
 
 }
 
 
 
-.welcome h2{
-
-font-size:24px;
-
-margin-bottom:10px;
-
-}
 
 
 
-.welcome p{
+
+/* Subtitle */
+
+
+header p{
+
+
+font-size:14px;
+
 
 color:#9ca3af;
 
-line-height:1.6;
+
+line-height:1.5;
+
 
 }
+
+
 
 
 
@@ -199,37 +289,107 @@ line-height:1.6;
 
 /* Online Status */
 
+
 .status{
+
 
 display:flex;
 
+
 justify-content:center;
+
 
 align-items:center;
 
+
 gap:8px;
+
 
 font-size:13px;
 
+
 color:#9ca3af;
+
 
 margin-top:10px;
 
+
 }
+
+
 
 
 
 .status-dot{
 
+
 width:8px;
+
 
 height:8px;
 
+
 background:#22c55e;
+
 
 border-radius:50%;
 
+
 }
+
+
+
+
+
+
+
+/* Welcome Section */
+
+
+.welcome{
+
+
+text-align:center;
+
+
+padding:30px 20px;
+
+
+color:white;
+
+
+}
+
+
+
+
+
+.welcome h2{
+
+
+font-size:24px;
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.welcome p{
+
+
+color:#9ca3af;
+
+
+line-height:1.6;
+
+
+}
+
 
 
 
@@ -237,106 +397,149 @@ border-radius:50%;
 
 /* Chat Section */
 
+
 .chat-section{
+
 
 flex:1;
 
+
 display:flex;
+
 
 flex-direction:column;
 
+
 min-height:0;
+
 
 }
 
 /* ===================================
-   ChatTBM v2.1
-   STYLE PART 2
-   Chat Messages • Quick Buttons
+   ChatTBM v2.1 FINAL
+   STYLE.CSS PART 2
+   Chat Area • Messages • Quick Buttons
 =================================== */
 
 
-/* Chat Area */
+/* Chat Box */
+
 
 #chat-box{
 
+
 flex:1;
+
 
 overflow-y:auto;
 
+
 padding:20px;
 
+
 display:flex;
+
 
 flex-direction:column;
 
+
 gap:15px;
+
 
 scroll-behavior:smooth;
 
+
 }
 
 
 
-/* AI Message */
+
+
+/* Bot Message */
+
 
 .bot-message{
 
+
 max-width:85%;
+
 
 background:#1d212b;
 
+
 border:1px solid #2f3542;
+
 
 border-radius:18px;
 
+
 padding:15px;
+
 
 animation:fadeIn .3s ease;
 
+
 box-shadow:
+
 0 5px 15px rgba(0,0,0,.25);
+
 
 }
 
 
 
 
-/* AI Information */
+
+/* Bot Header */
+
 
 .bot-info{
 
+
 display:flex;
+
 
 justify-content:space-between;
 
+
 align-items:center;
+
 
 margin-bottom:10px;
 
+
 }
+
 
 
 
 
 .bot-name{
 
+
 font-weight:bold;
+
 
 font-size:15px;
 
+
 color:#3b82f6;
 
+
 }
+
 
 
 
 
 .bot-time{
 
+
 font-size:12px;
 
+
 color:#9ca3af;
+
 
 }
 
@@ -344,17 +547,23 @@ color:#9ca3af;
 
 
 
-/* AI Text */
+/* Bot Text */
+
 
 .bot{
 
+
 color:white;
+
 
 line-height:1.7;
 
+
 font-size:15px;
 
+
 white-space:pre-line;
+
 
 }
 
@@ -364,28 +573,41 @@ white-space:pre-line;
 
 /* User Message */
 
+
 .user{
+
 
 align-self:flex-end;
 
+
 max-width:80%;
+
 
 background:#2563eb;
 
+
 color:white;
+
 
 padding:14px 18px;
 
+
 border-radius:18px;
+
 
 line-height:1.6;
 
+
 animation:fadeIn .3s ease;
 
+
 box-shadow:
+
 0 5px 15px rgba(37,99,235,.25);
 
+
 word-wrap:break-word;
+
 
 }
 
@@ -395,33 +617,48 @@ word-wrap:break-word;
 
 /* Copy Button */
 
+
 .copy-btn{
+
 
 margin-top:12px;
 
+
 background:#2563eb;
+
 
 color:white;
 
+
 border:none;
+
 
 border-radius:10px;
 
+
 padding:8px 14px;
+
 
 cursor:pointer;
 
+
 font-size:13px;
+
 
 transition:.3s;
 
+
 }
+
+
 
 
 
 .copy-btn:hover{
 
+
 background:#3b82f6;
+
 
 }
 
@@ -429,40 +666,57 @@ background:#3b82f6;
 
 
 
-/* Quick Buttons */
+
+/* Quick Action Buttons */
+
 
 .quick-buttons{
 
+
 display:grid;
+
 
 grid-template-columns:repeat(2,1fr);
 
+
 gap:10px;
+
 
 padding:15px 20px;
 
+
 }
+
 
 
 
 
 .quick-buttons button{
 
+
 background:#1f2937;
+
 
 color:white;
 
+
 border:none;
+
 
 border-radius:12px;
 
+
 padding:12px;
+
 
 cursor:pointer;
 
+
 font-size:14px;
 
+
 transition:.3s;
+
 
 }
 
@@ -472,175 +726,255 @@ transition:.3s;
 
 .quick-buttons button:hover{
 
+
 background:#2563eb;
+
 
 transform:translateY(-2px);
 
+
 }
 
 
 
 
-/* Loading Animation */
+
+
+/* Typing Animation */
+
 
 .typing{
 
+
 display:flex;
+
 
 gap:5px;
 
+
 padding:10px;
 
+
 }
+
+
 
 
 
 .typing span{
 
+
 width:8px;
+
 
 height:8px;
 
+
 background:#2563eb;
+
 
 border-radius:50%;
 
+
 animation:bounce .8s infinite;
 
+
 }
+
+
 
 
 
 .typing span:nth-child(2){
 
+
 animation-delay:.2s;
 
+
 }
+
+
 
 
 
 .typing span:nth-child(3){
 
+
 animation-delay:.4s;
 
+
 }
+
+
+
+
 
 
 
 @keyframes bounce{
 
+
 0%,100%{
+
 
 transform:translateY(0);
 
+
 }
+
 
 
 50%{
 
+
 transform:translateY(-6px);
 
-}
 
 }
 
 
 
+}
 
 
-/* Message Animation */
+
+
+
+
+
+/* Fade Animation */
+
 
 @keyframes fadeIn{
 
 
 from{
 
+
 opacity:0;
+
 
 transform:translateY(10px);
 
+
 }
+
 
 
 to{
 
+
 opacity:1;
+
 
 transform:translateY(0);
 
+
 }
+
 
 
 }
 
 /* ===================================
-   ChatTBM v2.1
-   STYLE PART 3
+   ChatTBM v2.1 FINAL
+   STYLE.CSS PART 3
    Input • Buttons • Authentication
 =================================== */
 
 
 /* Input Area */
 
+
 .input-area{
+
 
 display:flex;
 
+
 gap:10px;
+
 
 padding:15px 20px;
 
+
 border-top:1px solid #2f3542;
+
 
 background:#0f1117;
 
+
 }
 
 
 
 
-/* Text Input */
+
+/* User Input */
+
 
 #user-input{
 
+
 flex:1;
+
 
 background:#1d212b;
 
+
 border:1px solid #2f3542;
+
 
 color:white;
 
+
 padding:14px 18px;
+
 
 border-radius:15px;
 
+
 outline:none;
+
 
 font-size:15px;
 
+
 transition:.3s;
 
+
 }
+
+
 
 
 
 #user-input::placeholder{
 
+
 color:#9ca3af;
 
+
 }
+
+
 
 
 
 #user-input:focus{
 
+
 border-color:#2563eb;
 
+
 box-shadow:
+
 0 0 12px rgba(37,99,235,.4);
 
+
 }
+
+
 
 
 
@@ -648,35 +982,49 @@ box-shadow:
 
 /* Send Button */
 
+
 #send-btn{
+
 
 background:#2563eb;
 
+
 color:white;
+
 
 border:none;
 
+
 border-radius:15px;
+
 
 padding:0 22px;
 
+
 cursor:pointer;
+
 
 font-size:15px;
 
-transition:.3s;
 
 }
+
+
 
 
 
 #send-btn:hover{
 
+
 background:#3b82f6;
+
 
 transform:scale(1.05);
 
+
 }
+
+
 
 
 
@@ -684,15 +1032,21 @@ transform:scale(1.05);
 
 /* Authentication Buttons */
 
+
 .auth-buttons{
+
 
 display:flex;
 
+
 justify-content:center;
+
 
 gap:10px;
 
+
 margin-top:20px;
+
 
 }
 
@@ -702,31 +1056,43 @@ margin-top:20px;
 
 .auth-buttons button{
 
+
 background:#2563eb;
+
 
 color:white;
 
+
 border:none;
+
 
 padding:12px 20px;
 
+
 border-radius:12px;
+
 
 cursor:pointer;
 
+
 font-size:14px;
 
-transition:.3s;
 
 }
+
+
 
 
 
 .auth-buttons button:hover{
 
+
 background:#3b82f6;
 
+
 }
+
+
 
 
 
@@ -734,27 +1100,39 @@ background:#3b82f6;
 
 /* Modal Background */
 
+
 .modal{
+
 
 display:none;
 
+
 position:fixed;
+
 
 top:0;
 
+
 left:0;
+
 
 width:100%;
 
+
 height:100%;
+
 
 background:rgba(0,0,0,.7);
 
+
 justify-content:center;
+
 
 align-items:center;
 
+
 z-index:1000;
+
 
 }
 
@@ -762,48 +1140,87 @@ z-index:1000;
 
 
 
-/* Modal Box */
+
+
+/* Modal Content */
+
 
 .modal-content{
 
+
 background:#111318;
+
 
 border:1px solid #2f3542;
 
+
 padding:25px;
+
 
 border-radius:20px;
 
+
 width:90%;
+
 
 max-width:350px;
 
+
 color:white;
 
+
 }
+
+
+
+
+
+
+
+.modal-content h2{
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
 
 
 
 
 .modal-content input{
 
+
 width:100%;
+
 
 margin:8px 0;
 
+
 padding:12px;
+
 
 border-radius:10px;
 
+
 border:1px solid #2f3542;
+
 
 background:#1d212b;
 
+
 color:white;
+
 
 outline:none;
 
+
 }
+
+
 
 
 
@@ -811,21 +1228,30 @@ outline:none;
 
 .modal-content button{
 
+
 width:100%;
+
 
 margin-top:10px;
 
+
 padding:12px;
+
 
 border:none;
 
+
 border-radius:10px;
+
 
 background:#2563eb;
 
+
 color:white;
 
+
 cursor:pointer;
+
 
 }
 
@@ -835,87 +1261,99 @@ cursor:pointer;
 
 .modal-content button:hover{
 
+
 background:#3b82f6;
 
-}
-
-
-
-
-
-/* Footer */
-
-.footer{
-
-text-align:center;
-
-padding:15px;
-
-font-size:13px;
-
-color:#9ca3af;
 
 }
 
 /* ===================================
-   ChatTBM v2.1
-   STYLE PART 4
-   Sidebar • History • Profile • Settings
+   ChatTBM v2.1 FINAL
+   STYLE.CSS PART 4
+   Sidebar • History • Profile • Extra Features
 =================================== */
 
 
 /* Sidebar */
 
+
 #sidebar{
+
 
 position:fixed;
 
+
 left:-280px;
+
 
 top:0;
 
+
 width:280px;
+
 
 height:100%;
 
+
 background:#111318;
+
 
 border-right:1px solid #2f3542;
 
+
 padding:20px;
+
 
 transition:.3s;
 
+
 z-index:999;
+
 
 overflow-y:auto;
 
+
 }
+
+
 
 
 
 #sidebar.active{
 
+
 left:0;
 
+
 }
+
+
+
 
 
 
 
 /* Sidebar Title */
 
+
 .sidebar-title{
+
 
 font-size:20px;
 
+
 font-weight:bold;
+
 
 color:white;
 
+
 margin-bottom:20px;
 
+
 }
+
+
 
 
 
@@ -923,23 +1361,36 @@ margin-bottom:20px;
 
 /* Sidebar Buttons */
 
+
 .sidebar button{
+
 
 width:100%;
 
+
 background:#2563eb;
+
 
 color:white;
 
+
 border:none;
+
 
 padding:12px;
 
+
 margin-bottom:10px;
+
 
 border-radius:12px;
 
+
 cursor:pointer;
+
+
+transition:.3s;
+
 
 }
 
@@ -949,7 +1400,9 @@ cursor:pointer;
 
 .sidebar button:hover{
 
+
 background:#3b82f6;
+
 
 }
 
@@ -957,15 +1410,22 @@ background:#3b82f6;
 
 
 
-/* Chat History */
+
+
+/* History List */
+
 
 #history-list{
 
+
 display:flex;
+
 
 flex-direction:column;
 
+
 gap:10px;
+
 
 }
 
@@ -975,78 +1435,43 @@ gap:10px;
 
 .history-item{
 
+
 background:#1d212b;
+
 
 color:white;
 
+
 padding:12px;
+
 
 border-radius:10px;
 
+
 cursor:pointer;
+
 
 font-size:14px;
 
+
 transition:.3s;
 
+
 }
+
 
 
 
 
 .history-item:hover{
 
+
 background:#2563eb;
 
-}
-
-
-
-
-
-/* Settings Area */
-
-.settings-box{
-
-background:#1d212b;
-
-padding:15px;
-
-border-radius:15px;
-
-margin-top:15px;
 
 }
 
 
-
-
-
-.settings-box input{
-
-width:100%;
-
-padding:12px;
-
-border-radius:10px;
-
-border:1px solid #2f3542;
-
-background:#0f1117;
-
-color:white;
-
-}
-
-
-
-
-
-.settings-box button{
-
-margin-top:10px;
-
-}
 
 
 
@@ -1054,15 +1479,21 @@ margin-top:10px;
 
 /* Account Status */
 
+
 #account-status{
+
 
 color:#9ca3af;
 
+
 font-size:14px;
+
 
 text-align:center;
 
+
 margin-top:10px;
+
 
 }
 
@@ -1070,17 +1501,29 @@ margin-top:10px;
 
 
 
+
+
+
 /* Profile Card */
+
 
 .profile-card{
 
+
 background:#1d212b;
+
 
 padding:20px;
 
+
+margin:15px 20px;
+
+
 border-radius:15px;
 
+
 text-align:center;
+
 
 }
 
@@ -1090,173 +1533,86 @@ text-align:center;
 
 .profile-card h3{
 
+
 color:#3b82f6;
+
 
 margin-bottom:10px;
 
+
 }
 
 
 
 
 
-/* Download / Share Buttons */
+
+
+
+/* Extra Buttons */
+
 
 .extra-buttons{
 
+
 display:flex;
+
 
 gap:10px;
 
+
 padding:10px 20px;
 
+
 }
+
+
 
 
 
 .extra-buttons button{
 
+
 flex:1;
+
 
 background:#1f2937;
 
+
 color:white;
+
 
 border:none;
 
+
 padding:10px;
+
 
 border-radius:12px;
 
+
 cursor:pointer;
 
+
+font-size:13px;
+
+
 }
+
+
 
 
 
 .extra-buttons button:hover{
 
-background:#2563eb;
-
-}
-
-/* ===================================
-   ChatTBM v2.1
-   STYLE PART 5
-   Final Polish • Mobile • Effects
-=================================== */
-
-
-/* Smooth Buttons */
-
-button{
-
-user-select:none;
-
-transition:.3s;
-
-}
-
-
-button:active{
-
-transform:scale(.95);
-
-}
-
-
-
-
-
-/* App Glow */
-
-.app:hover{
-
-box-shadow:
-
-0 0 20px rgba(37,99,235,.25),
-
-0 0 40px rgba(37,99,235,.15);
-
-}
-
-
-
-
-
-/* Scrollbar */
-
-#chat-box::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-
-
-#chat-box::-webkit-scrollbar-track{
-
-background:#111318;
-
-}
-
-
-
-#chat-box::-webkit-scrollbar-thumb{
 
 background:#2563eb;
 
-border-radius:10px;
 
 }
 
 
 
-#chat-box::-webkit-scrollbar-thumb:hover{
-
-background:#3b82f6;
-
-}
-
-
-
-
-
-/* Error Message */
-
-.error-message{
-
-background:#7f1d1d;
-
-color:#fecaca;
-
-padding:12px;
-
-border-radius:12px;
-
-margin:10px;
-
-}
-
-
-
-
-
-/* Success Message */
-
-.success-message{
-
-background:#14532d;
-
-color:#bbf7d0;
-
-padding:12px;
-
-border-radius:12px;
-
-margin:10px;
-
-}
 
 
 
@@ -1264,15 +1620,21 @@ margin:10px;
 
 /* Version Text */
 
+
 .version{
+
 
 text-align:center;
 
+
 font-size:11px;
+
 
 color:#6b7280;
 
+
 margin-top:5px;
+
 
 }
 
@@ -1280,51 +1642,358 @@ margin-top:5px;
 
 
 
-/* Light Theme Support */
+
+
+/* Footer */
+
+
+.footer{
+
+
+text-align:center;
+
+
+padding:15px;
+
+
+font-size:13px;
+
+
+color:#9ca3af;
+
+
+}
+
+/* ===================================
+   ChatTBM v2.1 FINAL
+   STYLE.CSS PART 5
+   Final Polish • Theme • Mobile
+=================================== */
+
+
+/* Global Button Effects */
+
+
+button{
+
+
+user-select:none;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+
+button:active{
+
+
+transform:scale(.95);
+
+
+}
+
+
+
+
+
+
+
+/* App Glow */
+
+
+.app:hover{
+
+
+box-shadow:
+
+
+0 0 20px rgba(37,99,235,.25),
+
+
+0 0 40px rgba(37,99,235,.15);
+
+
+}
+
+
+
+
+
+
+
+/* Scrollbar */
+
+
+#chat-box::-webkit-scrollbar{
+
+
+width:8px;
+
+
+}
+
+
+
+
+
+#chat-box::-webkit-scrollbar-track{
+
+
+background:#111318;
+
+
+}
+
+
+
+
+
+#chat-box::-webkit-scrollbar-thumb{
+
+
+background:#2563eb;
+
+
+border-radius:10px;
+
+
+}
+
+
+
+
+
+#chat-box::-webkit-scrollbar-thumb:hover{
+
+
+background:#3b82f6;
+
+
+}
+
+
+
+
+
+
+
+/* Error Message */
+
+
+.error-message{
+
+
+background:#7f1d1d;
+
+
+color:#fecaca;
+
+
+padding:12px;
+
+
+border-radius:12px;
+
+
+margin:10px;
+
+
+}
+
+
+
+
+
+
+
+/* Success Message */
+
+
+.success-message{
+
+
+background:#14532d;
+
+
+color:#bbf7d0;
+
+
+padding:12px;
+
+
+border-radius:12px;
+
+
+margin:10px;
+
+
+}
+
+
+
+
+
+
+
+/* Light Theme */
+
 
 .light-theme{
 
+
 background:#f3f4f6;
+
 
 color:#111;
 
+
 }
+
+
 
 
 
 .light-theme .app{
 
+
 background:white;
 
+
 }
+
+
+
+
+
+.light-theme header{
+
+
+background:#ffffff;
+
+
+}
+
+
+
+
+
+.light-theme header h1{
+
+
+color:#111;
+
+
+}
+
+
+
+
+
+.light-theme .welcome,
+
+
+.light-theme .bot{
+
+
+color:#111;
+
+
+}
+
+
 
 
 
 .light-theme .bot-message{
 
+
 background:#e5e7eb;
 
-color:#111;
+
+border-color:#d1d5db;
+
 
 }
 
 
-
-.light-theme .bot{
-
-color:#111;
-
-}
 
 
 
 .light-theme #user-input{
 
+
 background:white;
+
 
 color:#111;
 
+
 }
+
+
+
+
+
+.light-theme #sidebar{
+
+
+background:white;
+
+
+}
+
+
+
+
+
+.light-theme .history-item{
+
+
+background:#e5e7eb;
+
+
+color:#111;
+
+
+}
+
+
+
+
+
+.light-theme .profile-card{
+
+
+background:#e5e7eb;
+
+
+}
+
+
+
+
+
+.light-theme .quick-buttons button,
+
+
+.light-theme .extra-buttons button{
+
+
+background:#e5e7eb;
+
+
+color:#111;
+
+
+}
+
+
+
 
 
 
@@ -1332,12 +2001,16 @@ color:#111;
 
 /* Mobile Responsive */
 
+
 @media(max-width:600px){
+
 
 
 body{
 
+
 align-items:stretch;
+
 
 }
 
@@ -1345,96 +2018,143 @@ align-items:stretch;
 
 .app{
 
+
 width:100%;
+
 
 height:100vh;
 
+
 border-radius:0;
 
+
 }
+
+
 
 
 
 .hero-logo{
 
+
 width:75px;
+
 
 height:75px;
 
+
 }
+
+
 
 
 
 header h1{
 
+
 font-size:24px;
 
+
 }
+
+
 
 
 
 .quick-buttons{
 
+
 grid-template-columns:1fr;
 
+
 }
+
+
 
 
 
 .bot-message,
+
+
 .user{
+
 
 max-width:90%;
 
+
 }
+
+
 
 
 
 .input-area{
 
+
 padding:10px;
 
+
 }
+
+
 
 
 
 #send-btn{
 
+
 padding:0 15px;
 
-}
-
 
 }
 
 
 
+}
 
 
-/* Very Small Screens */
+
+
+
+/* Small Screens */
+
 
 @media(max-width:350px){
 
 
+
 header h1{
+
 
 font-size:20px;
 
+
 }
+
+
+
 
 
 #user-input{
 
+
 font-size:13px;
 
+
 }
+
+
+
 
 
 .quick-buttons button{
 
+
 font-size:13px;
 
+
 }
+
 
 
 }
