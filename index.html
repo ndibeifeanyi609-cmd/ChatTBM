@@ -3,43 +3,78 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ChatTBM - AI Content Assistant</title>
+<title>ChatTBM - AI Content Assistant</title>
 
-    <link rel="icon" href="chattbm.ico" type="image/x-icon">
+<link rel="icon" href="chattbm.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="chat-container">
+<!-- Sidebar -->
 
-    <img 
-        src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png" 
-        class="hero-logo" 
-        alt="ChatTBM Logo"
-    >
+<div id="sidebar" class="sidebar">
 
-    <div class="account-buttons">
+    <div class="sidebar-header">
 
-        <button onclick="openLogin()">
-            Login
-        </button>
-
-        <button onclick="openSignup()">
-            Sign Up
-        </button>
+        <h2>💬 ChatTBM</h2>
 
     </div>
 
-    <h2>
-        🤖 ChatTBM
-    </h2>
+    <button class="sidebar-btn" onclick="newChat()">
+        ➕ New Chat
+    </button>
+
+    <button class="sidebar-btn" onclick="clearChat()">
+        🗑 Clear Chat
+    </button>
+
+    <button class="sidebar-btn" onclick="openSettings()">
+        ⚙️ Settings
+    </button>
+
+    <h3>Recent Chats</h3>
+
+    <div id="history-list"></div>
+
+</div>
+
+<!-- Main Chat -->
+
+<div class="chat-container">
+
+    <div class="top-bar">
+
+        <button class="menu-btn" onclick="toggleSidebar()">
+            ☰
+        </button>
+
+        <div class="account-buttons">
+
+            <button onclick="openLogin()">
+                Login
+            </button>
+
+            <button onclick="openSignup()">
+                Sign Up
+            </button>
+
+        </div>
+
+    </div>
+
+    <img
+        src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png"
+        class="hero-logo"
+        alt="ChatTBM Logo">
+
+    <h2>🤖 ChatTBM</h2>
 
     <p class="subtitle">
         Your AI Content Assistant for Captions, Scripts & Viral Ideas.
@@ -50,11 +85,24 @@
         <p class="bot">
 
             👋 Welcome to ChatTBM!
-            I can help you create captions, video scripts, Facebook posts, hashtags, adverts and viral content ideas.
+
+            I can help you create captions, video scripts, Facebook posts, hashtags, adverts, content calendars and viral content ideas.
 
         </p>
 
+        <!-- Loading Spinner -->
+
+        <div id="loading" class="loading" style="display:none;">
+
+            <div class="spinner"></div>
+
+            <p>ChatTBM is thinking...</p>
+
+        </div>
+
     </div>
+
+    <!-- Quick Actions -->
 
     <div class="quick-buttons">
 
@@ -92,19 +140,37 @@
 
     </div>
 
+    <!-- Input Area -->
+
     <div class="input-area">
 
         <input
             type="text"
             id="user-input"
             placeholder="Ask ChatTBM anything..."
-        >
+            autocomplete="off">
 
         <button onclick="sendMessage()">
             Send
         </button>
 
     </div>
+
+    <!-- Chat Controls -->
+
+    <div class="chat-controls">
+
+        <button onclick="newChat()">
+            ➕ New Chat
+        </button>
+
+        <button onclick="clearChat()">
+            🗑 Clear Chat
+        </button>
+
+    </div>
+
+    <!-- Footer -->
 
     <div class="footer">
 
@@ -115,6 +181,118 @@
         <p>
             Powered by AI • Built for Creators
         </p>
+
+    </div>
+
+<!-- Login Modal -->
+
+<div id="loginModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeLogin()">&times;</span>
+
+        <h2>Login</h2>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email Address">
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password">
+
+        <label class="remember-me">
+
+            <input type="checkbox" id="rememberMe">
+
+            Remember Me
+
+        </label>
+
+        <button onclick="loginUser()">
+
+            Login
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Sign Up Modal -->
+
+<div id="signupModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeSignup()">&times;</span>
+
+        <h2>Create Account</h2>
+
+        <input
+            type="text"
+            id="signupName"
+            placeholder="Full Name">
+
+        <input
+            type="email"
+            id="signupEmail"
+            placeholder="Email Address">
+
+        <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password">
+
+        <button onclick="signupUser()">
+
+            Create Account
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Settings Modal -->
+
+<div id="settingsModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeSettings()">&times;</span>
+
+        <h2>⚙️ Settings</h2>
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter Username">
+
+        <button onclick="saveUsername()">
+
+            Save Username
+
+        </button>
+
+        <hr>
+
+        <button onclick="toggleTheme()">
+
+            🌙 Toggle Dark / Light Theme
+
+        </button>
+
+        <button onclick="clearAllData()">
+
+            🗑 Clear Saved Chats
+
+        </button>
 
     </div>
 
