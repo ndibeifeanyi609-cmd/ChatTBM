@@ -1,157 +1,102 @@
-// ===============================
-// ChatTBM - Enhanced Script
-// Part 1
-// ===============================
+// =====================================
+// ChatTBM v2.0
+// Script Part 1
+// =====================================
 
 // Elements
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("user-input");
+const loading = document.getElementById("loading");
 
-// Send with Enter key
-input.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
+// Press Enter to send
+input.addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+
         sendMessage();
+
     }
+
 });
 
-// Main Send Function
-function sendMessage() {
+// Send Message
+
+function sendMessage(){
 
     let message = input.value.trim();
 
-    if (message === "") {
+    if(message === ""){
+
+        alert("Please enter a message.");
+
         return;
+
     }
 
-    // User Message
-    chatBox.innerHTML += `
-        <p class="user">
-            ${message}
-        </p>
-    `;
-
-    chatBox.scrollTop = chatBox.scrollHeight;
+    addUserMessage(message);
 
     input.value = "";
 
-    // Typing indicator
-    const typing = document.createElement("p");
-    typing.className = "bot typing";
-    typing.id = "typing";
-    typing.innerHTML = "🤖 ChatTBM is typing...";
-    chatBox.appendChild(typing);
+    loading.style.display = "block";
 
-    chatBox.scrollTop = chatBox.scrollHeight;
+    setTimeout(function(){
 
-    // AI Reply Delay
-    setTimeout(() => {
+        loading.style.display = "none";
 
-        typing.remove();
+        let reply = getReply(message);
 
-        let reply =
-        "I can help you create captions, scripts, hashtags, adverts and viral content ideas 🚀";
+        addBotMessage(reply);
 
-        const lowerMessage = message.toLowerCase();
+        saveChat();
 
-        if (lowerMessage.includes("caption")) {
-
-            reply =
-            "✍️ Caption idea: 'Your next viral moment starts with one creative idea. Keep creating and never stop 🚀'";
-
-        }
-
-        else if (lowerMessage.includes("video")) {
-
-            reply =
-            "🎬 Video idea: Start with a strong hook, tell a short story, add emotion or humor, then end with a call to action.";
-
-        }
-
-        else if (lowerMessage.includes("script")) {
-
-            reply =
-            "📝 Script formula: Hook → Problem → Solution → Action. This keeps your audience watching.";
-
-        }
-
-        else if (lowerMessage.includes("hashtag")) {
-
-            reply =
-            "#️⃣ Hashtag ideas: #ContentCreator #ViralIdeas #AICreator #SocialMediaTips #ChatTBM";
-
-        }
-
-        else if (lowerMessage.includes("facebook")) {
-
-            reply =
-            "📘 Facebook tip: Start with a powerful first line, tell a short story, provide value, then end with a question to increase engagement.";
-
-        }
-
-        else if (lowerMessage.includes("instagram")) {
-
-            reply =
-            "📸 Instagram caption: 'Creating, learning, and growing every day. The journey has just begun. 🚀'";
-
-        }
-
-        else if (lowerMessage.includes("advert")) {
-
-            reply =
-            "📢 Advert formula: Grab attention → Explain the benefit → Build trust → End with a strong call to action.";
-
-        }
-
-        else if (lowerMessage.includes("calendar")) {
-
-            reply =
-            "📅 Weekly Content Plan:\n\nMonday - Tips\nTuesday - Behind the Scenes\nWednesday - Story\nThursday - Tutorial\nFriday - Entertainment\nSaturday - Q&A\nSunday - Motivation";
-
-        }
-
-        else if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
-
-            reply =
-            "👋 Hello! Welcome to ChatTBM. I'm ready to help you create amazing content.";
-
-        }
-
-        else if (lowerMessage.includes("help")) {
-
-            reply =
-            "🤖 I can help with captions, video scripts, Facebook posts, Instagram captions, hashtags, adverts, and content calendars.";
-
-        }
-
-        else if (lowerMessage.includes("who are you")) {
-
-            reply =
-            "🤖 I'm ChatTBM, your AI Content Assistant built to help creators grow faster with better content.";
-
-        }
-
-        else if (lowerMessage.includes("thank")) {
-
-            reply =
-            "😊 You're welcome! I'm always here whenever you need help.";
-
-        }
-
-        // Show AI reply
-        chatBox.innerHTML += `
-            <p class="bot">
-                ${reply}
-            </p>
-        `;
-
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-    }, 1000);
+    },1000);
 
 }
 
-// Quick Button Function
-function quickMessage(text) {
+// User Message
+
+function addUserMessage(text){
+
+    chatBox.innerHTML += `
+    <p class="user">
+        ${text}
+    </p>
+    `;
+
+    scrollBottom();
+
+}
+
+// Bot Message
+
+function addBotMessage(text){
+
+    chatBox.innerHTML += `
+
+    <div class="bot-message">
+
+        <p class="bot">
+
+            ${text}
+
+        </p>
+
+        <button class="copy-btn"
+        onclick="copyResponse(this)">
+            📋 Copy
+        </button>
+
+    </div>
+
+    `;
+
+    scrollBottom();
+
+}
+
+// Quick Buttons
+
+function quickMessage(text){
 
     input.value = text;
 
@@ -159,90 +104,442 @@ function quickMessage(text) {
 
 }
 
-// ===============================
-// ChatTBM Login & Signup System
-// Part 3
-// ===============================
+// Auto Scroll
 
-// Login
-function openLogin() {
+function scrollBottom(){
 
-    let email = prompt("📧 Enter your email:");
-
-    if (email === null) return;
-
-    let password = prompt("🔒 Enter your password:");
-
-    if (password === null) return;
-
-    email = email.trim();
-    password = password.trim();
-
-    if (email === "" || password === "") {
-
-        alert("❌ Please enter both your email and password.");
-        return;
-
-    }
-
-    localStorage.setItem("chatTBM_last_email", email);
-
-    alert("✅ Login successful!\n\nWelcome back to ChatTBM!");
+    chatBox.scrollTop = chatBox.scrollHeight;
 
 }
 
+// AI Reply Engine
 
+function getReply(message){
 
-// Sign Up
-function openSignup() {
+    message = message.toLowerCase();
 
-    let name = prompt("👤 Create your username:");
+    if(message.includes("caption")){
 
-    if (name === null) return;
+        return "✍️ Caption idea: Your next viral post starts with one creative idea. Keep creating. 🚀";
 
-    let email = prompt("📧 Enter your email:");
+    }
 
-    if (email === null) return;
+    if(message.includes("video")){
 
-    let password = prompt("🔒 Create a password:");
+        return "🎬 Video Script: Hook → Story → Value → Call To Action.";
 
-    if (password === null) return;
+    }
 
-    name = name.trim();
-    email = email.trim();
-    password = password.trim();
+    if(message.includes("script")){
 
-    if (name === "" || email === "" || password === "") {
+        return "📝 Script Formula: Hook → Problem → Solution → CTA.";
 
-        alert("❌ Please complete all fields.");
+    }
+
+    if(message.includes("facebook")){
+
+        return "📘 Facebook Tip: Tell a story, give value and finish with a question.";
+
+    }
+
+    if(message.includes("instagram")){
+
+        return "📸 Instagram Caption: Dream big. Stay consistent. Success follows action.";
+
+    }
+
+    if(message.includes("advert")){
+
+        return "📢 Advert Formula: Attention → Interest → Desire → Action.";
+
+    }
+
+    if(message.includes("calendar")){
+
+        return "📅 Monday: Tips\nTuesday: Behind the Scenes\nWednesday: Story\nThursday: Tutorial\nFriday: Entertainment\nSaturday: Q&A\nSunday: Motivation";
+
+    }
+
+    if(message.includes("hashtag")){
+
+        return "#️⃣ #ChatTBM #ContentCreator #AI #ViralContent #SocialMedia";
+
+    }
+
+    if(message.includes("hello") || message.includes("hi")){
+
+        return "👋 Hello! Welcome to ChatTBM.";
+
+    }
+
+    return "🤖 I can help you create captions, scripts, adverts, hashtags and viral content ideas.";
+
+}
+
+// Copy Response
+
+function copyResponse(button){
+
+    const text = button.previousElementSibling.innerText;
+
+    navigator.clipboard.writeText(text);
+
+    button.innerHTML = "✅ Copied";
+
+    setTimeout(function(){
+
+        button.innerHTML="📋 Copy";
+
+    },1500);
+
+}
+
+// =====================================
+// ChatTBM v2.0
+// Script Part 2
+// Login • Signup • Settings
+// =====================================
+
+// ---------- LOGIN ----------
+
+function openLogin(){
+
+    document.getElementById("loginModal").style.display = "flex";
+
+}
+
+function closeLogin(){
+
+    document.getElementById("loginModal").style.display = "none";
+
+}
+
+function loginUser(){
+
+    const email =
+    document.getElementById("loginEmail").value.trim();
+
+    const password =
+    document.getElementById("loginPassword").value.trim();
+
+    if(email==="" || password===""){
+
+        alert("Please enter your email and password.");
+
         return;
 
     }
 
-    // Save basic information locally
-    localStorage.setItem("chatTBM_username", name);
-    localStorage.setItem("chatTBM_last_email", email);
+    localStorage.setItem("chatTBM_last_email",email);
 
-    alert(
-        "🎉 Account created successfully!\n\n" +
-        "Welcome to ChatTBM, " + name + " 🚀"
+    alert("✅ Login Successful!\n\nWelcome back to ChatTBM.");
+
+    closeLogin();
+
+}
+
+// ---------- SIGN UP ----------
+
+function openSignup(){
+
+    document.getElementById("signupModal").style.display="flex";
+
+}
+
+function closeSignup(){
+
+    document.getElementById("signupModal").style.display="none";
+
+}
+
+function signupUser(){
+
+    const name =
+    document.getElementById("signupName").value.trim();
+
+    const email =
+    document.getElementById("signupEmail").value.trim();
+
+    const password =
+    document.getElementById("signupPassword").value.trim();
+
+    if(name==="" || email==="" || password===""){
+
+        alert("Please complete all fields.");
+
+        return;
+
+    }
+
+    localStorage.setItem("chatTBM_username",name);
+
+    localStorage.setItem("chatTBM_last_email",email);
+
+    alert("🎉 Account created successfully!\n\nWelcome " + name + "!");
+
+    closeSignup();
+
+}
+
+// ---------- SETTINGS ----------
+
+function openSettings(){
+
+    document.getElementById("settingsModal").style.display="flex";
+
+}
+
+function closeSettings(){
+
+    document.getElementById("settingsModal").style.display="none";
+
+}
+
+// Save Username
+
+function saveUsername(){
+
+    const username =
+    document.getElementById("username").value.trim();
+
+    if(username===""){
+
+        alert("Enter a username.");
+
+        return;
+
+    }
+
+    localStorage.setItem("chatTBM_username",username);
+
+    alert("✅ Username saved.");
+
+}
+
+// Theme Toggle
+
+function toggleTheme(){
+
+    document.body.classList.toggle("light-theme");
+
+    if(document.body.classList.contains("light-theme")){
+
+        localStorage.setItem("chatTBM_theme","light");
+
+    }else{
+
+        localStorage.setItem("chatTBM_theme","dark");
+
+    }
+
+}
+
+// Load Theme
+
+window.onload=function(){
+
+    const theme =
+    localStorage.getItem("chatTBM_theme");
+
+    if(theme==="light"){
+
+        document.body.classList.add("light-theme");
+
+    }
+
+};
+
+// Clear Saved Data
+
+function clearAllData(){
+
+    if(confirm("Delete all saved ChatTBM data?")){
+
+        localStorage.clear();
+
+        location.reload();
+
+    }
+
+}
+
+// =====================================
+// ChatTBM v2.0
+// Script Part 3
+// Sidebar • Chat History • New Chat
+// =====================================
+
+// Toggle Sidebar
+
+function toggleSidebar(){
+
+    document.getElementById("sidebar").classList.toggle("active");
+
+}
+
+// New Chat
+
+function newChat(){
+
+    if(confirm("Start a new chat?")){
+
+        chatBox.innerHTML=`
+
+        <p class="bot">
+
+        👋 Welcome to ChatTBM!
+
+        I can help you create captions, video scripts,
+        Facebook posts, hashtags, adverts and viral content ideas.
+
+        </p>
+
+        `;
+
+        saveChat();
+
+    }
+
+}
+
+// Clear Chat
+
+function clearChat(){
+
+    if(confirm("Clear this conversation?")){
+
+        chatBox.innerHTML="";
+
+        localStorage.removeItem("chatTBM_chat");
+
+        loadHistory();
+
+    }
+
+}
+
+// Save Current Chat
+
+function saveChat(){
+
+    localStorage.setItem(
+
+        "chatTBM_chat",
+
+        chatBox.innerHTML
+
     );
 
+    let history = JSON.parse(
+
+        localStorage.getItem("chatTBM_history")
+
+    ) || [];
+
+    history.unshift({
+
+        title:"Chat " + new Date().toLocaleString(),
+
+        content:chatBox.innerHTML
+
+    });
+
+    if(history.length>20){
+
+        history.pop();
+
+    }
+
+    localStorage.setItem(
+
+        "chatTBM_history",
+
+        JSON.stringify(history)
+
+    );
+
+    loadHistory();
+
 }
 
+// Load Previous Chat
 
+function loadChat(){
 
-// ===============================
-// Future API Ready
-// ===============================
+    const saved =
 
-// This function is reserved for connecting
-// Grok, OpenAI, or another AI API later.
+    localStorage.getItem("chatTBM_chat");
 
-async function askAI(message) {
+    if(saved){
 
-    // Future API integration goes here.
+        chatBox.innerHTML = saved;
 
-    return "API connection coming soon.";
+    }
 
 }
+
+// Load Sidebar History
+
+function loadHistory(){
+
+    const historyList =
+
+    document.getElementById("history-list");
+
+    if(!historyList) return;
+
+    historyList.innerHTML="";
+
+    const history = JSON.parse(
+
+        localStorage.getItem("chatTBM_history")
+
+    ) || [];
+
+    history.forEach(function(chat,index){
+
+        const item =
+
+        document.createElement("div");
+
+        item.className="history-item";
+
+        item.innerHTML=chat.title;
+
+        item.onclick=function(){
+
+            chatBox.innerHTML=chat.content;
+
+            localStorage.setItem(
+
+                "chatTBM_chat",
+
+                chat.content
+
+            );
+
+        };
+
+        historyList.appendChild(item);
+
+    });
+
+}
+
+// Better Error Handling
+
+window.addEventListener("error",function(){
+
+    alert("⚠️ Something went wrong. Please refresh ChatTBM.");
+
+});
+
+// Load Everything
+
+window.addEventListener("load",function(){
+
+    loadChat();
+
+    loadHistory();
+
+});
