@@ -1,3 +1,9 @@
+<!-- ===================================
+     ChatTBM v2.1
+     INDEX.HTML PART 1
+     Head • App Start • Header
+=================================== -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,467 +11,700 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ChatTBM - AI Content Assistant</title>
 
-<link rel="icon"
-href="chattbm.ico"
-type="image/x-icon">
 
-<link rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="style.css">
+
 
 </head>
 
+
 <body>
 
-<!-- Overlay -->
 
-<div id="overlay"
-class="overlay"
-onclick="closeSidebar()"></div>
+<div class="app">
 
-<!-- Sidebar -->
 
-<div id="sidebar"
-class="sidebar">
 
-    <div class="sidebar-header">
+<!-- Header -->
 
-        <img
-        src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png"
-        class="sidebar-logo"
-        alt="ChatTBM">
+<header>
 
-        <h2>ChatTBM</h2>
 
-    </div>
-
-    <button
-    class="sidebar-btn"
-    onclick="newChat()">
-
-        ➕ New Chat
-
-    </button>
-
-    <button
-    class="sidebar-btn"
-    onclick="clearChat()">
-
-        🗑 Clear Chat
-
-    </button>
-
-    <button
-    class="sidebar-btn"
-    onclick="openSettings()">
-
-        ⚙️ Settings
-
-    </button>
-
-    <hr>
-
-    <h3>Recent Chats</h3>
-
-    <div id="history-list"></div>
-
-</div>
-
-<!-- Main App -->
-
-<div class="chat-container">
-
-<!-- Top Bar -->
-
-<div class="top-bar">
-
-<button
-class="menu-btn"
-onclick="toggleSidebar()">
-
-☰
-
-</button>
-
-<div class="top-title">
-
-<img
+<img 
 src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png"
-class="top-logo"
-alt="ChatTBM">
+class="hero-logo"
+alt="ChatTBM Logo"
+>
 
-<span>
 
-ChatTBM
 
-</span>
+<h1>
+
+<span class="brand">Chat</span>TBM
+
+</h1>
+
+
+
+<p>
+
+Your AI Content Assistant for Captions,
+Scripts & Viral Ideas
+
+</p>
+
+
+
+<div class="status">
+
+<span class="status-dot"></span>
+
+ChatTBM Online
 
 </div>
 
-<div class="account-buttons">
 
-<button
-onclick="openLogin()">
+
+<div class="auth-buttons">
+
+
+<button onclick="openLogin()">
 
 Login
 
 </button>
 
-<button
-onclick="openSignup()">
+
+
+<button onclick="openSignup()">
 
 Sign Up
 
 </button>
 
-</div>
 
 </div>
 
-<!-- Hero -->
 
-<div class="hero">
 
-<img
-src="08AD4FA9-71D7-4B6E-BC1A-0C293EA7E5F7.png"
-class="hero-logo"
-alt="ChatTBM">
+</header>
+
+
+
+<!-- Welcome Area -->
+
+
+<section class="welcome"
+id="welcome-message">
+
 
 <h2>
 
-🤖 ChatTBM
+Welcome to ChatTBM 👋
 
 </h2>
 
-<p class="subtitle">
 
-Your AI Content Assistant
-for Captions,
-Scripts &
-Viral Ideas.
+<p>
+
+Create captions, scripts, adverts,
+hashtags and viral content ideas with AI.
 
 </p>
 
+
+</section>
+
+<!-- ===================================
+     ChatTBM v2.1
+     INDEX.HTML PART 2
+     Sidebar • Chat Area
+=================================== -->
+
+
+<!-- Sidebar -->
+
+<div id="sidebar" class="sidebar">
+
+
+<h2 class="sidebar-title">
+
+ChatTBM Menu
+
+</h2>
+
+
+
+<button onclick="newChat()">
+
+➕ New Chat
+
+</button>
+
+
+
+<button onclick="clearChat()">
+
+🗑 Clear Chat
+
+</button>
+
+
+
+<button onclick="openSettings()">
+
+⚙️ Settings
+
+</button>
+
+
+
+<button onclick="showProfile()">
+
+👤 Profile
+
+</button>
+
+
+
+<button onclick="downloadChat()">
+
+📄 Download Chat
+
+</button>
+
+
+
+<button onclick="shareChat()">
+
+📤 Share Chat
+
+</button>
+
+
+
+<div id="account-status">
+
+👤 Guest
+
 </div>
 
-<!-- Chat Area -->
+
+
+<h3>
+
+Chat History
+
+</h3>
+
+
+
+<div id="history-list">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- Chat Section -->
+
+
+<section class="chat-section">
+
+
 
 <div id="chat-box">
 
+
+
 <div class="bot-message">
+
 
 <div class="bot-info">
 
-<div class="bot-name">
+
+<span class="bot-name">
 
 🤖 ChatTBM
 
-</div>
+</span>
 
-<div class="bot-time">
-
-Just now
 
 </div>
 
-</div>
+
 
 <p class="bot">
+
 
 👋 Welcome to ChatTBM!
 
 I can help you create:
 
-• Captions
+• Captions  
+• Video scripts  
+• Facebook posts  
+• Hashtags  
+• Advert ideas  
+• Viral content plans
 
-• Video Scripts
-
-• Facebook Posts
-
-• Instagram Captions
-
-• Hashtags
-
-• Adverts
-
-• Viral Content Ideas
-
-• Content Calendars
 
 </p>
 
-<button
-class="copy-btn">
 
-📋 Copy
-
-</button>
 
 </div>
 
+
+
 </div>
 
-<!-- Quick Action Buttons -->
+<!-- ===================================
+     ChatTBM v2.1
+     INDEX.HTML PART 3
+     Quick Buttons • Input Area
+=================================== -->
+
+
+<!-- Quick Actions -->
+
 
 <div class="quick-buttons">
 
+
+<button onclick="quickMessage('Give me a viral video idea')">
+
+🎬 Video Idea
+
+</button>
+
+
+
 <button onclick="quickMessage('Create a caption')">
-✍️ Create Caption
+
+✍️ Caption
+
 </button>
 
-<button onclick="quickMessage('Write a video script')">
-🎬 Video Script
+
+
+<button onclick="quickMessage('Write a short script')">
+
+📝 Script
+
 </button>
 
-<button onclick="quickMessage('Generate hashtags')">
+
+
+<button onclick="quickMessage('Give me hashtags')">
+
 #️⃣ Hashtags
+
 </button>
 
-<button onclick="quickMessage('Write a Facebook post')">
-📘 Facebook Post
+
+
+<button onclick="quickMessage('Create an advert idea')">
+
+📢 Advert
+
 </button>
 
-<button onclick="quickMessage('Write an Instagram caption')">
-📸 Instagram Caption
+
+
+<button onclick="quickMessage('Give me a content calendar')">
+
+📅 Calendar
+
 </button>
 
-<button onclick="quickMessage('Give me viral content ideas')">
-🚀 Viral Ideas
-</button>
 
-<button onclick="quickMessage('Create an advert')">
-📢 Create Advert
-</button>
-
-<button onclick="quickMessage('Create a content calendar')">
-📅 Content Calendar
-</button>
 
 </div>
 
-<!-- Fixed Bottom Chat Area -->
 
-<div class="bottom-chat">
+
+
+
+<!-- Loading Animation -->
+
+
+<div id="loading" class="typing" style="display:none;">
+
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+
+</div>
+
+
+
+
+
+<!-- Message Input -->
+
 
 <div class="input-area">
 
+
 <input
+
 type="text"
+
 id="user-input"
-placeholder="Message ChatTBM...">
+
+placeholder="Ask ChatTBM anything..."
+
+>
+
+
+
 
 <button
-id="send-btn"
-onclick="sendMessage()">
 
-➤
+id="send-btn"
+
+onclick="sendMessage()"
+
+>
+
+Send
 
 </button>
 
-</div>
+
 
 </div>
 
-<!-- Footer -->
 
-<div class="footer">
 
-<p>
 
-🚀 ChatTBM helps creators make captions,
-scripts, hashtags,
-adverts and viral content ideas.
+</section>
 
-</p>
+<!-- ===================================
+     ChatTBM v2.1
+     INDEX.HTML PART 4
+     Login • Signup • Settings Modals
+=================================== -->
 
-<p>
 
-Powered by AI • Built for Creators
-
-</p>
-
-</div>
-
-<!-- ===========================
-     Login Modal
-=========================== -->
+<!-- Login Modal -->
 
 <div id="loginModal" class="modal">
 
-    <div class="modal-content">
 
-        <span class="close"
-        onclick="closeLogin()">
+<div class="modal-content">
 
-            &times;
 
-        </span>
+<h2>
 
-        <h2>
+Login To ChatTBM
 
-            Welcome Back
+</h2>
 
-        </h2>
 
-        <p>
 
-            Login to your ChatTBM account.
+<input
 
-        </p>
+type="email"
 
-        <input
-        type="email"
-        id="loginEmail"
-        placeholder="Email Address">
+id="loginEmail"
 
-        <input
-        type="password"
-        id="loginPassword"
-        placeholder="Password">
+placeholder="Email"
 
-        <button onclick="loginUser()">
+>
 
-            Login
 
-        </button>
 
-    </div>
+<input
+
+type="password"
+
+id="loginPassword"
+
+placeholder="Password"
+
+>
+
+
+
+<button onclick="loginUser()">
+
+Login
+
+</button>
+
+
+
+<button onclick="closeLogin()">
+
+Cancel
+
+</button>
+
+
 
 </div>
 
-<!-- ===========================
-     Sign Up Modal
-=========================== -->
+</div>
+
+
+
+
+
+
+
+<!-- Signup Modal -->
+
 
 <div id="signupModal" class="modal">
 
-    <div class="modal-content">
 
-        <span class="close"
-        onclick="closeSignup()">
+<div class="modal-content">
 
-            &times;
 
-        </span>
+<h2>
 
-        <h2>
+Create ChatTBM Account
 
-            Create Account
+</h2>
 
-        </h2>
 
-        <p>
 
-            Join ChatTBM today.
+<input
 
-        </p>
+type="text"
 
-        <input
-        type="text"
-        id="signupName"
-        placeholder="Full Name">
+id="signupName"
 
-        <input
-        type="email"
-        id="signupEmail"
-        placeholder="Email Address">
+placeholder="Full Name"
 
-        <input
-        type="password"
-        id="signupPassword"
-        placeholder="Password">
+>
 
-        <button onclick="signupUser()">
 
-            Create Account
 
-        </button>
 
-    </div>
+<input
+
+type="email"
+
+id="signupEmail"
+
+placeholder="Email"
+
+>
+
+
+
+<input
+
+type="password"
+
+id="signupPassword"
+
+placeholder="Password"
+
+>
+
+
+
+<button onclick="signupUser()">
+
+Create Account
+
+</button>
+
+
+
+<button onclick="closeSignup()">
+
+Cancel
+
+</button>
+
+
 
 </div>
 
-<!-- ===========================
-     Settings
-=========================== -->
+</div>
+
+
+
+
+
+
+
+<!-- Settings Modal -->
+
 
 <div id="settingsModal" class="modal">
 
-    <div class="modal-content">
 
-        <span class="close"
-        onclick="closeSettings()">
+<div class="modal-content">
 
-            &times;
 
-        </span>
+<h2>
 
-        <h2>
+ChatTBM Settings
 
-            ⚙️ Settings
+</h2>
 
-        </h2>
 
-        <input
-        type="text"
-        id="username"
-        placeholder="Username">
 
-        <button onclick="saveUsername()">
+<input
 
-            Save Username
+type="text"
 
-        </button>
+id="username"
 
-        <button onclick="toggleTheme()">
+placeholder="Enter username"
 
-            🌙 Toggle Dark / Light Theme
+>
 
-        </button>
 
-        <button onclick="clearAllData()">
 
-            🗑 Clear Saved Data
 
-        </button>
+<button onclick="saveUsername()">
 
-    </div>
+Save Username
 
-</div>
+</button>
 
-<!-- ===========================
-     Loading Spinner
-=========================== -->
 
-<div id="loading"
-class="loading">
 
-    <div class="spinner"></div>
+<button onclick="toggleTheme()">
 
-    <p>
+🌙 Toggle Theme
 
-        ChatTBM is thinking...
+</button>
 
-    </p>
 
-</div>
 
-<!-- ===========================
-     End Main Container
-=========================== -->
+<button onclick="clearAllData()">
+
+🗑 Delete Data
+
+</button>
+
+
+
+<button onclick="closeSettings()">
+
+Close
+
+</button>
+
+
 
 </div>
 
-<!-- ===========================
-     JavaScript
-=========================== -->
+</div>
+
+<!-- ===================================
+     ChatTBM v2.1
+     INDEX.HTML PART 5
+     Extra Features • Footer • Scripts
+=================================== -->
+
+
+<!-- Extra Feature Buttons -->
+
+
+<div class="extra-buttons">
+
+
+<button onclick="startVoice()">
+
+🎤 Voice
+
+</button>
+
+
+
+<button onclick="showVersion()">
+
+ℹ️ Version
+
+</button>
+
+
+
+<button onclick="backupChat()">
+
+💾 Backup
+
+</button>
+
+
+
+<button onclick="restoreBackup()">
+
+♻️ Restore
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<!-- Footer -->
+
+
+<div class="footer">
+
+
+<p>
+
+ChatTBM v2.1
+
+</p>
+
+
+
+<p>
+
+Your AI Content Assistant 🚀
+
+</p>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- JavaScript -->
+
 
 <script src="script.js"></script>
 
+
+
 </body>
+
 
 </html>
