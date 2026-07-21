@@ -1,7 +1,7 @@
 <!-- ===================================
-     ChatTBM v2.1
+     ChatTBM v2.1 FINAL
      INDEX.HTML PART 1
-     Head • App Start • Header
+     Head • App • Header
 =================================== -->
 
 <!DOCTYPE html>
@@ -15,9 +15,7 @@
 
 <title>ChatTBM - AI Content Assistant</title>
 
-
 <link rel="stylesheet" href="style.css">
-
 
 </head>
 
@@ -28,10 +26,17 @@
 <div class="app">
 
 
-
 <!-- Header -->
 
 <header>
+
+
+<button onclick="toggleSidebar()" class="menu-btn">
+
+☰
+
+</button>
+
 
 
 <img 
@@ -59,6 +64,7 @@ Scripts & Viral Ideas
 
 
 
+
 <div class="status">
 
 <span class="status-dot"></span>
@@ -66,6 +72,7 @@ Scripts & Viral Ideas
 ChatTBM Online
 
 </div>
+
 
 
 
@@ -90,16 +97,16 @@ Sign Up
 </div>
 
 
-
 </header>
 
 
 
-<!-- Welcome Area -->
 
 
-<section class="welcome"
-id="welcome-message">
+<!-- Welcome Section -->
+
+
+<section class="welcome" id="welcome-message">
 
 
 <h2>
@@ -107,6 +114,7 @@ id="welcome-message">
 Welcome to ChatTBM 👋
 
 </h2>
+
 
 
 <p>
@@ -117,10 +125,11 @@ hashtags and viral content ideas with AI.
 </p>
 
 
+
 </section>
 
 <!-- ===================================
-     ChatTBM v2.1
+     ChatTBM v2.1 FINAL
      INDEX.HTML PART 2
      Sidebar • Chat Area
 =================================== -->
@@ -187,6 +196,17 @@ ChatTBM Menu
 
 
 
+
+<button onclick="logoutUser()">
+
+🚪 Logout
+
+</button>
+
+
+
+
+
 <div id="account-status">
 
 👤 Guest
@@ -195,11 +215,14 @@ ChatTBM Menu
 
 
 
+
+
 <h3>
 
 Chat History
 
 </h3>
+
 
 
 
@@ -229,6 +252,7 @@ Chat History
 <div class="bot-message">
 
 
+
 <div class="bot-info">
 
 
@@ -239,7 +263,15 @@ Chat History
 </span>
 
 
+<span class="bot-time">
+
+Now
+
+</span>
+
+
 </div>
+
 
 
 
@@ -251,11 +283,11 @@ Chat History
 I can help you create:
 
 • Captions  
-• Video scripts  
-• Facebook posts  
+• Video Scripts  
+• Facebook Posts  
 • Hashtags  
-• Advert ideas  
-• Viral content plans
+• Advert Ideas  
+• Viral Content Plans
 
 
 </p>
@@ -269,16 +301,17 @@ I can help you create:
 </div>
 
 <!-- ===================================
-     ChatTBM v2.1
+     ChatTBM v2.1 FINAL
      INDEX.HTML PART 3
-     Quick Buttons • Input Area
+     Quick Actions • Input Area
 =================================== -->
 
 
-<!-- Quick Actions -->
+<!-- Quick Action Buttons -->
 
 
 <div class="quick-buttons">
+
 
 
 <button onclick="quickMessage('Give me a viral video idea')">
@@ -286,6 +319,7 @@ I can help you create:
 🎬 Video Idea
 
 </button>
+
 
 
 
@@ -297,11 +331,13 @@ I can help you create:
 
 
 
+
 <button onclick="quickMessage('Write a short script')">
 
 📝 Script
 
 </button>
+
 
 
 
@@ -313,6 +349,7 @@ I can help you create:
 
 
 
+
 <button onclick="quickMessage('Create an advert idea')">
 
 📢 Advert
@@ -321,7 +358,8 @@ I can help you create:
 
 
 
-<button onclick="quickMessage('Give me a content calendar')">
+
+<button onclick="quickMessage('Create a content calendar')">
 
 📅 Calendar
 
@@ -335,7 +373,9 @@ I can help you create:
 
 
 
-<!-- Loading Animation -->
+
+
+<!-- AI Typing Loading -->
 
 
 <div id="loading" class="typing" style="display:none;">
@@ -354,10 +394,14 @@ I can help you create:
 
 
 
+
+
+
 <!-- Message Input -->
 
 
 <div class="input-area">
+
 
 
 <input
@@ -392,10 +436,11 @@ Send
 
 
 
+
 </section>
 
 <!-- ===================================
-     ChatTBM v2.1
+     ChatTBM v2.1 FINAL
      INDEX.HTML PART 4
      Login • Signup • Settings Modals
 =================================== -->
@@ -417,6 +462,7 @@ Login To ChatTBM
 
 
 
+
 <input
 
 type="email"
@@ -426,6 +472,7 @@ id="loginEmail"
 placeholder="Email"
 
 >
+
 
 
 
@@ -441,11 +488,13 @@ placeholder="Password"
 
 
 
+
 <button onclick="loginUser()">
 
 Login
 
 </button>
+
 
 
 
@@ -459,7 +508,9 @@ Cancel
 
 </div>
 
+
 </div>
+
 
 
 
@@ -481,6 +532,7 @@ Cancel
 Create ChatTBM Account
 
 </h2>
+
 
 
 
@@ -509,6 +561,7 @@ placeholder="Email"
 
 
 
+
 <input
 
 type="password"
@@ -521,11 +574,13 @@ placeholder="Password"
 
 
 
+
 <button onclick="signupUser()">
 
 Create Account
 
 </button>
+
 
 
 
@@ -539,7 +594,10 @@ Cancel
 
 </div>
 
+
 </div>
+
+
 
 
 
@@ -564,6 +622,7 @@ ChatTBM Settings
 
 
 
+
 <input
 
 type="text"
@@ -585,6 +644,7 @@ Save Username
 
 
 
+
 <button onclick="toggleTheme()">
 
 🌙 Toggle Theme
@@ -593,11 +653,13 @@ Save Username
 
 
 
+
 <button onclick="clearAllData()">
 
-🗑 Delete Data
+🗑 Delete All Data
 
 </button>
+
 
 
 
@@ -611,10 +673,11 @@ Close
 
 </div>
 
+
 </div>
 
 <!-- ===================================
-     ChatTBM v2.1
+     ChatTBM v2.1 FINAL
      INDEX.HTML PART 5
      Extra Features • Footer • Scripts
 =================================== -->
@@ -626,11 +689,13 @@ Close
 <div class="extra-buttons">
 
 
+
 <button onclick="startVoice()">
 
 🎤 Voice
 
 </button>
+
 
 
 
@@ -642,11 +707,13 @@ Close
 
 
 
+
 <button onclick="backupChat()">
 
 💾 Backup
 
 </button>
+
 
 
 
@@ -659,6 +726,9 @@ Close
 
 
 </div>
+
+
+
 
 
 
@@ -685,13 +755,16 @@ Your AI Content Assistant 🚀
 </p>
 
 
-</div>
-
-
-
-
 
 </div>
+
+
+
+
+
+
+</div>
+
 
 
 
