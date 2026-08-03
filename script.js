@@ -35,8 +35,8 @@ input.addEventListener("keypress", function(event){
 
 // Send Message
 
-function sendMessage(){
-
+// Send Message
+async function sendMessage(){
 
 if(!input || !chatBox){
 
@@ -45,28 +45,22 @@ return;
 }
 
 
-
 let message = input.value.trim();
 
 
-
 if(message === ""){
-
 
 alert("Please enter a message.");
 
 return;
 
-
 }
-
 
 
 addUserMessage(message);
 
 
 input.value = "";
-
 
 
 if(loading){
@@ -77,8 +71,39 @@ loading.style.display="flex";
 
 
 
+try{
 
-setTimeout(function(){
+
+const response = await fetch(
+
+"http://localhost:3000/api/chat",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+
+body:JSON.stringify({
+
+userId:"guest",
+
+message:message
+
+})
+
+}
+
+);
+
+
+
+const data = await response.json();
 
 
 
@@ -90,16 +115,51 @@ loading.style.display="none";
 
 
 
-let reply = getReply(message);
+let reply =
+
+data.response ||
+
+"⚠️ No response received from ChatTBM.";
+
 
 
 addBotMessage(reply);
 
 
+
 saveChat();
 
 
-},1000);
+
+}
+
+
+catch(error){
+
+
+console.log(
+
+"ChatTBM Backend Error:",
+
+error
+
+);
+
+
+
+if(loading){
+
+loading.style.display="none";
+
+}
+
+
+
+addBotMessage(
+
+"⚠️ ChatTBM backend is offline. Start Node.js server first."
+
+);
 
 
 
@@ -107,35 +167,7 @@ saveChat();
 
 
 
-
-
-
-
-// Add User Message
-
-function addUserMessage(text){
-
-
-
-chatBox.innerHTML += `
-
-<div class="user">
-
-${escapeText(text)}
-
-</div>
-
-`;
-
-
-
-scrollBottom();
-
-
-
 }
-
-
 
 
 
