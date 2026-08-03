@@ -33,7 +33,7 @@ input.addEventListener("keypress", function(event){
 
 
 
-// Send Message
+
 
 // Send Message
 async function sendMessage(){
